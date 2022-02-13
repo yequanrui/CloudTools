@@ -3,21 +3,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 // DevUI部分组件依赖angular动画，需要引入animations模块
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule, SearchModule } from 'ng-devui';
+import { LayoutModule } from 'ng-devui';
+import { DevUIGlobalConfig, DevUIGlobalConfigToken } from 'ng-devui/utils/globalConfig';
+import { HeaderModule } from './header';
+import { FooterModule } from './footer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+const devui_global_config: DevUIGlobalConfig = {
+  global: {
+    showAnimation: false,
+  },
+};
+
 @NgModule({
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    SearchModule,
-    AppRoutingModule,
+declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule, LayoutModule, HeaderModule, FooterModule, AppRoutingModule],
+  
+  providers: [
+    {
+      provide: DevUIGlobalConfigToken,
+      useValue: devui_global_config,
+    },
   ],
-  declarations: [AppComponent],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

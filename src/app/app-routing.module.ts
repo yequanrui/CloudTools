@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'timeAxis',
+    path: 'repoAxis',
     loadChildren: () =>
-      import('./time-axis/time-axis.module').then((m) => m.TimeAxisModule),
+      import('./repo-axis/repo-axis.module').then((m) => m.RepoAxisModule),
   },
   {
     path: '',

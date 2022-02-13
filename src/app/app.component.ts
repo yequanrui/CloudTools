@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DevConfigService } from 'ng-devui/utils/globalConfig';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  logoSrc =
-    'https://res.hc-cdn.com/x-roma-components/1.0.10/assets/devui/logo.svg';
   title = 'CloudTools';
   toolSets = [
     {
@@ -31,7 +30,7 @@ export class AppComponent implements OnInit {
   ];
   apiDocs = [];
 
-  constructor() {
+  constructor(private devConfigService: DevConfigService) {
     if (location.hostname === 'localhost') {
       this.toolSets.forEach(
         (tool) => (tool.url = `http://localhost:8080/Html${tool.url}`)
@@ -39,7 +38,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
-
-  onSearch(event: string) {}
+  ngOnInit() {
+    this.devConfigService.set('global', {
+      showAnimation: false,
+    });
+  }
 }

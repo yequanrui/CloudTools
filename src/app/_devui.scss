@@ -1,1 +1,40 @@
-@import "~ng-devui/styles-var/devui-var.scss";
+@import '~ng-devui/styles-var/devui-var.scss';
+
+@mixin font-color(
+  $color: $devui-text,
+  $fontSize: $devui-font-size,
+  $fontWeight: $devui-font-content-weight,
+  $lightHeight: $devui-line-height-base
+) {
+  color: $color;
+  @include font-set($fontSize, $fontWeight, $lightHeight);
+}
+
+@mixin font-set($fontSize: $devui-font-size, $fontWeight: $devui-font-content-weight, $lightHeight: $devui-line-height-base) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lightHeight;
+}
+
+@mixin border($width: 1px, $color: $devui-line, $style: solid) {
+  border: {
+    width: $width;
+    color: $color;
+    style: $style;
+  }
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin flex($justify: space-between, $align: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  align-items: $align;
+  align-content: $align;
+  justify-content: $justify;
+}

@@ -1,0 +1,30 @@
+@import '../devui';
+
+.header-container {
+  background-color: $devui-base-bg;
+  height: 40px;
+  @include box-shadow($devui-shadow-length-connected-overlay $devui-shadow);
+  @include flex;
+  .header-left {
+    @include flex(flex-start);
+    .header-logo {
+      display: inherit;
+      .logo {
+        margin-left: 20px;
+      }
+      .text {
+        margin-left: 8px;
+        @include font-color($devui-text, $devui-font-size-icon, $devui-font-title-weight);
+      }
+    }
+    .header-search {
+      margin-left: 20px;
+    }
+  }
+  .header-right {
+    @include flex(flex-end);
+    .header-repo {
+      margin: 0 12px;
+    }
+  }
+}

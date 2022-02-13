@@ -1,0 +1,22 @@
+<div class="header-container">
+  <div class="header-left">
+    <a class="header-logo" href="/" target="_self">
+      <img class="logo" [src]="logoSrc" width="26px" height="26px" />
+      <span class="text">DevUI</span>
+    </a>
+    <d-search class="header-search" [iconPosition]="'left'" [isKeyupSearch]="true" [noBorder]="true"
+      (searchFn)="onSearch($event)">
+    </d-search>
+  </div>
+  <div class="header-right">
+    <div class="theme">
+      <theme-picker></theme-picker>
+    </div>
+    <div class="language">
+      <language-switch></language-switch>
+    </div>
+    <div class="header-repo">
+      <github-btn></github-btn>
+    </div>
+  </div>
+</div>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../shared/services/api.service';
 
 @Component({
-  selector: 'time-axis',
-  templateUrl: './time-axis.component.html',
-  styleUrls: ['./time-axis.component.scss'],
+  selector: 'repo-axis',
+  templateUrl: './repo-axis.component.html',
+  styleUrls: ['./repo-axis.component.scss'],
 })
-export class TimeAxisComponent implements OnInit {
+export class RepoAxisComponent implements OnInit {
   repos: any[] = [];
 
   constructor(private apiService: ApiService) {}
