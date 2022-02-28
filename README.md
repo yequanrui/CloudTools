@@ -2,12 +2,15 @@
 
 > Toolsets based on DevUI(Angular)
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
+[![version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
+[![types](https://img.shields.io/npm/types/@angular/core)](https://www.tslang.cn/)
+[![license](https://img.shields.io/github/license/yequanrui/CloudTools)](https://choosealicense.rustwiki.org/licenses/mit/)
 
+[![node](https://img.shields.io/node/v/@angular/core)](http://nodejs.cn/)
 [![npm](https://img.shields.io/npm/v/npm/latest-6?label=npm)](https://www.npmjs.com/)
 
-[![angular](https://img.shields.io/npm/v/@angular/core?label=angular)](http://angular.cn/)
-[![devui](https://img.shields.io/npm/v/ng-devui?label=ng-devui)](https://devui.design/home)
+[![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](http://angular.cn/)
+[![devui](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/ng-devui)](https://devui.design/home)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
