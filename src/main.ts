@@ -1,6 +1,8 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { ThemeServiceInit } from 'ng-devui/theme';
+import { devuiDarkTheme, devuiLightTheme, ThemeServiceInit } from 'ng-devui/theme';
+import { deepTheme, galaxyTheme, infinityTheme, provenceTheme, sweetTheme } from 'ng-devui/theme-collection';
+import { greenLightTheme, greenDarkTheme, devuiLargeFontTheme } from './app/header/theme-picker/theme-data-more';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
@@ -8,7 +10,19 @@ if (environment.production) {
   enableProdMode();
 }
 
-ThemeServiceInit();
+const themes = {
+  'devui-light-theme': devuiLightTheme,
+  'devui-dark-theme': devuiDarkTheme,
+  'green-light-theme': greenLightTheme,
+  'green-dark-theme': greenDarkTheme,
+  'devui-large-font-theme': devuiLargeFontTheme,
+  'infinity-theme': infinityTheme,
+  'provence-theme': provenceTheme,
+  'sweet-theme': sweetTheme,
+  'deep-theme': deepTheme,
+  'galaxy-theme': galaxyTheme,
+};
+ThemeServiceInit(themes, undefined, undefined, undefined, true);
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

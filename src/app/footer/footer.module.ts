@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@shared';
 import { FooterComponent } from './footer.component';
 
 @NgModule({
   imports: [SharedModule],
-  declarations: [FooterComponent],
   exports: [FooterComponent],
+  declarations: [FooterComponent],
 })
 export class FooterModule {}

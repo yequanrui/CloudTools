@@ -1,5 +1,14 @@
 # CloudTools
 
+> Toolsets based on DevUI(Angular)
+
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
+
+[![npm](https://img.shields.io/npm/v/npm/latest-6?label=npm)](https://www.npmjs.com/)
+
+[![angular](https://img.shields.io/npm/v/@angular/core?label=angular)](http://angular.cn/)
+[![devui](https://img.shields.io/npm/v/ng-devui?label=ng-devui)](https://devui.design/home)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## Development server

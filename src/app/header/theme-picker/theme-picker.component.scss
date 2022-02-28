@@ -9,67 +9,136 @@
   font-size: 16px;
   line-height: 1.5;
   cursor: pointer;
-
   &:hover {
     color: $devui-link;
   }
 }
 
 .theme-block {
-  vertical-align: middle;
-  display: inline-block;
   width: 18px;
   height: 18px;
-  position: relative;
   border: 1px solid $devui-brand;
-
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
   .brand-color {
+    width: 16px;
+    height: 16px;
+    border: 8px solid transparent;
+    border-top-color: $devui-brand;
+    border-left-color: $devui-brand;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-top: 8px solid $devui-brand;
-    border-left: 8px solid $devui-brand;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid transparent;
   }
-
   .background-color {
+    width: 16px;
+    height: 16px;
+    border: 8px solid transparent;
+    border-right-color: $devui-base-bg;
+    border-bottom-color: $devui-base-bg;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-top: 8px solid transparent;
-    border-left: 8px solid transparent;
-    border-right: 8px solid $devui-base-bg;
-    border-bottom: 8px solid $devui-base-bg;
   }
 }
 
 .theme-menu {
+  width: 200px; // 根据tab页动态宽度
   padding: 8px 12px;
-  font-size: 12px;
+  font-size: $devui-font-size;
   line-height: 1.5;
-  width: 180px;
-  height: 110px;
-
   .title {
-    font-weight: bold;
-    padding-bottom: 4px;
     margin: 8px 0 4px 0;
-    line-height: 1.5;
+    padding-bottom: 4px;
     border-bottom: 1px dashed $devui-line;
+    font-weight: bold;
+    line-height: 1.5;
   }
-
   .content {
     padding-left: 20px;
   }
 }
 
+d-toggle,
+d-select {
+  display: inline-block;
+}
+
 .theme-select-radio {
   padding-left: 4px;
+  padding-right: 0;
+}
+
+.theme-follow-toggle {
+  transform: scale(0.8);
+}
+
+.theme-follow-toggle + span {
+  vertical-align: middle;
+  line-height: 28px;
+  margin-left: 4px;
+}
+
+.prefers-color-scheme {
+  display: none;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .prefers-color-scheme {
+    display: inline-block;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .prefers-color-scheme {
+    display: inline-block;
+  }
+}
+
+.theme-color .theme-brand {
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid $devui-line;
+}
+
+.theme-color::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.devui-tick {
+  fill: $devui-light-text;
+}
+
+.extend-theme-image {
+  background-repeat: no-repeat;
+  height: 40px;
+  margin-bottom: 8px;
+  border-radius: $devui-border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extend-theme-title {
+  margin: 0 8px;
+  color: $devui-light-text;
+}
+
+.active-theme {
+  color: $devui-light-text;
+  margin-right: 8px;
+  background-color: $devui-brand;
+  border-radius: 50%;
+  opacity: 0.6;
+  padding: 4px;
 }

@@ -17,7 +17,7 @@ export class LanguageSwitchComponent implements OnInit {
 
   constructor(private translate: TranslateService, private i18n: I18nService, private broadcast: BroadcastService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.language = I18nUtil.getCurrentLanguage();
   }
 

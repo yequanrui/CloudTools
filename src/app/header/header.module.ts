@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { DropDownModule, RadioModule, SearchModule, ToggleModule } from 'ng-devui';
+import { SearchModule } from 'ng-devui';
 import { SharedModule } from '@shared';
 import { GithubBtnModule } from '@components/github-btn';
+import { LanguageSwitchModule } from './language-switch/language-switch.module';
+import { ThemePickerModule } from './theme-picker/theme-picker.module';
 import { HeaderComponent } from './header.component';
-import { LanguageSwitchComponent } from './language-switch/language-switch.component';
-import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 
 @NgModule({
-  imports: [DropDownModule, RadioModule, SearchModule, ToggleModule, SharedModule, GithubBtnModule],
+  imports: [SearchModule, SharedModule, GithubBtnModule, LanguageSwitchModule, ThemePickerModule],
   exports: [HeaderComponent],
-  declarations: [HeaderComponent, LanguageSwitchComponent, ThemePickerComponent],
+  declarations: [HeaderComponent],
 })
 export class HeaderModule {}

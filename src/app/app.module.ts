@@ -7,20 +7,16 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LayoutModule } from 'ng-devui';
 import { DevUIGlobalConfig, DevUIGlobalConfigToken } from 'ng-devui/utils/globalConfig';
-import { HeaderModule } from './header';
-import { FooterModule } from './footer';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderModule } from './header/header.module';
+import { FooterModule } from './footer/footer.module';
 import { AppComponent } from './app.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, `./assets/i18n/`, '.json');
 }
 
-const devui_global_config: DevUIGlobalConfig = {
-  global: {
-    showAnimation: false,
-  },
-};
+const devui_global_config: DevUIGlobalConfig = { global: { showAnimation: false } };
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,13 +36,7 @@ const devui_global_config: DevUIGlobalConfig = {
       },
     }),
   ],
-
-  providers: [
-    {
-      provide: DevUIGlobalConfigToken,
-      useValue: devui_global_config,
-    },
-  ],
+  providers: [{ provide: DevUIGlobalConfigToken, useValue: devui_global_config }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
