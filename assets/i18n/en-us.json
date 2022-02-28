@@ -1,0 +1,22 @@
+{
+  "themePicker": {
+    "theme": "Theme",
+    "color": "Theme Color",
+    "mode": "Theme Mode",
+    "light": "Light Theme",
+    "dark": "Dark Theme",
+    "follow": "Follow System",
+    "largeSize": "Large FontSize",
+    "default": "Default",
+    "extend": "Extend",
+    "customize": "Customize",
+    "customizeDark": "Dark",
+    "customizeDownloadConfig": "Download Theme Config",
+    "customizeDownloadConfigHelp": "Usage",
+    "infinity": "Infinity",
+    "sweet": "Sweet",
+    "deep": "Deep",
+    "provence": "Provence",
+    "galaxy": "Galaxy"
+  }
+}
