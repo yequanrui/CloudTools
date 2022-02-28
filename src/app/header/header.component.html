@@ -1,8 +1,8 @@
 <div class="header-container">
   <div class="header-left">
-    <a class="header-logo" href="/" target="_self">
-      <img class="logo" [src]="logoSrc" width="26px" height="26px" />
-      <span class="text">DevUI</span>
+    <a class="header-logo" href="/" target="_self" [title]="appName">
+      <img class="logo" src="../../favicon.ico" width="26px" height="26px" />
+      <span class="text">{{appName}}</span>
     </a>
     <d-search class="header-search" [iconPosition]="'left'" [isKeyupSearch]="true" [noBorder]="true"
       (searchFn)="onSearch($event)">
@@ -16,7 +16,7 @@
       <language-switch></language-switch>
     </div>
     <div class="header-repo">
-      <github-btn></github-btn>
+      <github-btn [repoName]="appName"></github-btn>
     </div>
   </div>
 </div>

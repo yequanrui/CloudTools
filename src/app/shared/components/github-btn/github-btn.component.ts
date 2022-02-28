@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -14,30 +14,23 @@ export class GithubBtnComponent implements OnInit {
   @Input() type = 'star'; // 按钮类型（star/watch/fork/sponsor/follow）
   @Input() size = ''; // 按钮大小（默认空，可选large）
   @Input() showCount = true;
-  repoLink: SafeResourceUrl;
+  repoLink!: SafeResourceUrl;
   width = 100;
   height = 20;
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     if (this.showRepo) {
       let repoLink = `https://ghbtns.com/github-btn.html?user=${this.userName}`;
-      switch (this.type) {
-        case 'star':
-        case 'fork':
-          repoLink += `&repo=${this.repoName}&type=${this.type}&count=${this.showCount}`;
-          break;
-        case 'watch':
-          repoLink += `&repo=${this.repoName}&type=${this.type}&v=2&count=${this.showCount}`;
-          break;
-        case 'follow':
-          repoLink += `&type=${this.type}&count=${this.showCount}`;
-          break;
-        default:
-          repoLink += `&type=${this.type}`;
-          break;
-      }
+      const subfixMap: any = {
+        star: `&repo=${this.repoName}&type=${this.type}&count=${this.showCount}`,
+        fork: `&repo=${this.repoName}&type=${this.type}&count=${this.showCount}`,
+        watch: `&repo=${this.repoName}&type=${this.type}&v=2&count=${this.showCount}`,
+        follow: `&type=${this.type}&count=${this.showCount}`,
+        default: `&type=${this.type}`,
+      };
+      repoLink += subfixMap[this.type || 'default'];
       this.size && (repoLink += `&size=${this.size}`);
       this.repoLink = this.sanitizer.bypassSecurityTrustResourceUrl(repoLink);
     }

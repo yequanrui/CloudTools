@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  logoSrc = 'https://res.hc-cdn.com/x-roma-components/1.0.10/assets/devui/logo.svg';
+  appName = 'CloudTools';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   onSearch(event: string) {}
 }

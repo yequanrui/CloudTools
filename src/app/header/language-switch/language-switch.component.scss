@@ -1,10 +1,26 @@
 @import '~ng-devui/styles-var/devui-var.scss';
 
 .header-language-switch {
-    font-size: $devui-font-size-page-title;
-    margin: 0 12px;
-    cursor: pointer;
-    &:hover {
-        color: $devui-list-item-hover-text;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  svg path {
+    fill: $devui-icon-text;
+    :hover {
+      fill: $devui-icon-fill-active-hover;
     }
+  }
+}
+
+.devui-dropdown-menu ::ng-deep {
+  .devui-dropdown-item .language-prefix {
+    margin-right: 8px;
+  }
+  .active-lang .devui-dropdown-item {
+    color: $devui-list-item-active-text !important;
+    background-color: $devui-list-item-active-bg !important;
+  }
 }

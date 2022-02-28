@@ -1,7 +1,7 @@
-<div dDropDown appendToBody [appendToBodyDirections]="['leftDown', 'leftUp', 'rightDown', 'rightUp']"
+<div dDropDown appendToBody [appendToBodyDirections]="['leftDown','leftUp','rightDown','rightUp']"
   [closeScope]="'blank'">
   <div dDropDownToggle class="theme-toggle">
-    主题
+    {{'themePicker.theme'|translate}}
     <div class="theme-block">
       <span class="brand-color"></span>
       <span class="background-color"></span>
@@ -9,13 +9,14 @@
   </div>
   <div dDropDownMenu class="theme-menu">
     <section>
-      <div class="title">主题模式</div>
+      <div class="title">{{'themePicker.mode'|translate}}</div>
       <div class="content">
-        <d-radio-group class="theme-select-radio" [(ngModel)]="themeMode" (change)="themesChange()"
-          [ngModelOptions]="{ standalone: true }">
-          <d-radio [value]="'light'">{{ '浅色模式' }}</d-radio>
-          <d-radio [value]="'dark'">{{ '深色模式' }}</d-radio>
+        <d-radio-group class="theme-select-radio" [(ngModel)]="themeMode" [ngModelOptions]="{standalone:true}"
+          (change)="themesChange()">
+          <d-radio [value]="'light'">{{'themePicker.light'|translate}}</d-radio>
+          <d-radio [value]="'dark'">{{'themePicker.dark'|translate}}</d-radio>
         </d-radio-group>
+        <d-toggle></d-toggle>
       </div>
     </section>
   </div>

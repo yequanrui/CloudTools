@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { I18nUtil } from 'ng-devui/i18n';
-import { BroadcastService } from 'src/app/shared/services/broadcast.service';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { EN_US, I18nService, I18nUtil, ZH_CN } from 'ng-devui/i18n';
+import { BroadcastService } from '@services/broadcast.service';
 
 @Component({
   selector: 'language-switch',
@@ -8,20 +9,23 @@ import { BroadcastService } from 'src/app/shared/services/broadcast.service';
   styleUrls: ['./language-switch.component.scss'],
 })
 export class LanguageSwitchComponent implements OnInit {
-  @Input() languageArr: string[] = ['中文', 'English'];
-  @Output() languageEvent = new EventEmitter<string>();
-  currentLang: string;
+  languages = [
+    { key: ZH_CN, lang: '简体中文', prefix: 'CN' },
+    { key: EN_US, lang: 'English', prefix: 'US' },
+  ];
+  language = ZH_CN;
 
-  constructor(private broadcast: BroadcastService) {}
+  constructor(private translate: TranslateService, private i18n: I18nService, private broadcast: BroadcastService) {}
 
   ngOnInit(): void {
-    this.currentLang = I18nUtil.getCurrentLanguage();
+    this.language = I18nUtil.getCurrentLanguage();
   }
 
-  changeLanguage(): void {
-    this.currentLang = this.currentLang === 'zh-cn' ? 'en-us' : 'zh-cn';
-    localStorage.setItem('lang', this.currentLang);
-    this.languageEvent.emit(this.currentLang);
-    this.broadcast.send('languageEvent', this.currentLang);
+  onLanguageChange(language: string) {
+    this.language = language;
+    localStorage.setItem(this.i18n.LANG_KEY, this.language);
+    this.i18n.toggleLang(this.language);
+    this.translate.use(this.language);
+    this.broadcast.send('language-changed', this.language);
   }
 }
