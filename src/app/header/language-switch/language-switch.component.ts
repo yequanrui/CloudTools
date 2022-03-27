@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EN_US, I18nService, I18nUtil, ZH_CN } from 'ng-devui/i18n';
+import { Broadcast } from '@data/broadcast';
 import { BroadcastService } from '@services/broadcast.service';
 
 @Component({
@@ -26,6 +27,6 @@ export class LanguageSwitchComponent implements OnInit {
     localStorage.setItem(this.i18n.LANG_KEY, this.language);
     this.i18n.toggleLang(this.language);
     this.translate.use(this.language);
-    this.broadcast.send('language-changed', this.language);
+    this.broadcast.send(Broadcast.LangSwitch, this.language);
   }
 }

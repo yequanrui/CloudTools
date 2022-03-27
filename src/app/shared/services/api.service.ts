@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/index';
+import { catchError, map, Observable, of } from 'rxjs';
+import { GITHUB_API } from '@data/api';
+import { UtilService } from './util.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class ApiService {
-  baseUrl = 'https://api.github.com';
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private utilService: UtilService) {}
 
   getRepos(name: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/users/${name}/repos`);
+    return this.http.get<any>(`${GITHUB_API}/users/${name}/repos`).pipe(
+      catchError((err) => {
+        this.utilService.openToast(err);
+        return of([]);
+      }),
+      map((res) => {
+        return res || [];
+      })
+    );
   }
 }

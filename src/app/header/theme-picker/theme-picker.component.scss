@@ -12,6 +12,15 @@
   &:hover {
     color: $devui-link;
   }
+  &-title {
+    margin-right: 4px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .theme-toggle-title {
+    display: none;
+  }
 }
 
 .theme-block {

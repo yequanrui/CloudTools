@@ -14,6 +14,7 @@ export class GithubBtnComponent implements OnInit {
   @Input() type = 'star'; // 按钮类型（star/watch/fork/sponsor/follow）
   @Input() size = ''; // 按钮大小（默认空，可选large）
   @Input() showCount = true;
+  ghbtnsLink = 'https://ghbtns.com/github-btn.html';
   repoLink!: SafeResourceUrl;
   width = 100;
   height = 20;
@@ -22,7 +23,7 @@ export class GithubBtnComponent implements OnInit {
 
   ngOnInit() {
     if (this.showRepo) {
-      let repoLink = `https://ghbtns.com/github-btn.html?user=${this.userName}`;
+      let repoLink = `${this.ghbtnsLink}?user=${this.userName}`;
       const subfixMap: any = {
         star: `&repo=${this.repoName}&type=${this.type}&count=${this.showCount}`,
         fork: `&repo=${this.repoName}&type=${this.type}&count=${this.showCount}`,

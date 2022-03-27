@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'repoAxis',
-    loadChildren: () =>
-      import('./repo-axis/repo-axis.module').then((m) => m.RepoAxisModule),
+    path: '',
+    redirectTo: 'repoAxis',
+    pathMatch: 'full',
   },
   {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full',
+    path: 'repoAxis',
+    loadChildren: () => import('./repo-axis/repo-axis.module').then((m) => m.RepoAxisModule),
   },
 ];
 
