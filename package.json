@@ -16,11 +16,11 @@
     "watch": "ng build --watch --configuration development",
     "deploy": "ng deploy --base-href=/CloudTools/ --name='yequanrui' --email='yequanrui@qq.com'",
     "test": "ng test",
-    "clean": "rimraf package-lock.json node_modules"
+    "clean": "rimraf node_modules package-lock.json"
   },
   "dependencies": {
     "@angular/animations": "~13.2.4",
-    "@angular/cdk": "^13.2.4",
+    "@angular/cdk": "~13.2.4",
     "@angular/common": "~13.2.4",
     "@angular/compiler": "~13.2.4",
     "@angular/core": "~13.2.4",
