@@ -18,5 +18,8 @@
     "deep": "Deep",
     "provence": "Provence",
     "galaxy": "Galaxy"
+  },
+  "repoAxis": {
+    "archived": "Archived"
   }
 }
