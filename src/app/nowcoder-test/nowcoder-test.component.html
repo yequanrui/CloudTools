@@ -16,7 +16,7 @@
   <d-col [dFlex]="1">
     <d-row [dFlex]="1" [dFlexContainer]="'row'" [dJustify]="'between'" [dStyle]="{'height':'100%'}">
       <d-col [dFlex]="0.64">
-        <div id="code" [style.height.%]="100"></div>
+        <textarea dTextarea placeholder="测试代码" [style.height.%]="100" [(ngModel)]="code"></textarea>
       </d-col>
       <d-col [dFlex]="0.34" [dFlexContainer]="'column'">
         <d-row [dFlex]="0.5">
