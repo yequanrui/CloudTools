@@ -1,0 +1,35 @@
+<d-row [dFlex]="1" [dFlexContainer]="'column'" [dAlign]="'stretch'" [dGutter]="[0,8]" [dStyle]="{'height':'100%'}">
+  <d-col>
+    <d-alert type="info" [closeable]="false">
+      牛客网JavaScript V8模拟环境，提供<code>readline()</code>和<code>print()</code>接口
+    </d-alert>
+  </d-col>
+  <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
+    <d-row [dFlex]="0.64" [dAlign]="'center'" [dJustify]="'between'">
+      <d-button bsStyle="primary" (btnClick)="setCode(template)">代码模板</d-button>
+      <d-button bsStyle="common" (btnClick)="setCode()">清空代码</d-button>
+    </d-row>
+    <d-row [dFlex]="0.34" [dAlign]="'center'" [dJustify]="'end'">
+      超时限制（毫秒）: <d-input-number [(ngModel)]="timeout"></d-input-number>
+    </d-row>
+  </d-col>
+  <d-col [dFlex]="1">
+    <d-row [dFlex]="1" [dFlexContainer]="'row'" [dJustify]="'between'" [dStyle]="{'height':'100%'}">
+      <d-col [dFlex]="0.64">
+        <div id="code" [style.height.%]="100"></div>
+      </d-col>
+      <d-col [dFlex]="0.34" [dFlexContainer]="'column'">
+        <d-row [dFlex]="0.5">
+          <textarea dTextarea placeholder="输入用例" [style.height.%]="100" [(ngModel)]="input"></textarea>
+        </d-row>
+        <d-row [dFlex]="0.1" [dAlign]="'center'" [dJustify]="'between'">
+          <d-button bsStyle="primary" (btnClick)="runCode()">执行代码</d-button>
+          <d-button bsStyle="common" (btnClick)="setInput()">清空输入</d-button>
+        </d-row>
+        <d-row [dFlex]="0.4">
+          <textarea dTextarea readonly placeholder="输出结果" [style.height.%]="100" [(ngModel)]="output"></textarea>
+        </d-row>
+      </d-col>
+    </d-row>
+  </d-col>
+</d-row>

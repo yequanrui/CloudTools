@@ -7,8 +7,11 @@
   background-size: 100% 100%;
   > d-layout {
     height: 100vh;
-  }
-  d-content {
-    padding: 16px;
+    d-aside d-accordion {
+      height: 100%;
+    }
+    d-content {
+      padding: 16px;
+    }
   }
 }

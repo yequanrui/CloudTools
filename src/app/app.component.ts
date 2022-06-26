@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EN_US, I18nUtil, ZH_CN } from 'ng-devui/i18n';
-import { DevConfigService } from 'ng-devui/utils/globalConfig';
+import { DevConfigService } from 'ng-devui/utils';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,31 @@ import { DevConfigService } from 'ng-devui/utils/globalConfig';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  menu = [
+    {
+      title: 'Development',
+      open: true,
+      children: [
+        { title: 'GitHub Timeline', link: '/RepoAxis', linkType: 'routerLink' },
+        { title: 'NowCoder Test', link: '/NowcoderTest', linkType: 'routerLink' },
+      ],
+    },
+    {
+      title: 'Advanced',
+      children: [
+        { title: 'Data Table (disabled)', disabled: true, link: '/components/zh-cn/datatable', linkType: 'routerLink' },
+        { title: 'Drag Drop', link: '/components/zh-cn/dragdrop', linkType: 'routerLink' },
+      ],
+    },
+    {
+      title: 'Others',
+      children: [
+        { title: 'Icon Library', link: '/icon', linkType: 'routerLink' },
+        { title: 'Home Page(External link open in this window)', link: '/', linkType: 'hrefLink' },
+      ],
+    },
+  ];
+
   constructor(private router: Router, private translate: TranslateService, private devConfigService: DevConfigService) {
     this.translate.addLangs([ZH_CN, EN_US]);
     const currentLang = I18nUtil.getCurrentLanguage();

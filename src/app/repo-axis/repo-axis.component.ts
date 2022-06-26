@@ -6,7 +6,7 @@ import { ApiService } from '@services/api.service';
 @Component({
   selector: 'repo-axis',
   templateUrl: './repo-axis.component.html',
-  styleUrls: ['./repo-axis.component.scss'],
+  styleUrls: [],
 })
 export class RepoAxisComponent implements OnInit {
   showLoading = false;

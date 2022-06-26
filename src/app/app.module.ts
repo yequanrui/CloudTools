@@ -5,8 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { LayoutModule } from 'ng-devui';
-import { DevUIGlobalConfig, DevUIGlobalConfigToken } from 'ng-devui/utils/globalConfig';
+import { AccordionModule, LayoutModule } from 'ng-devui';
+import { DevUIGlobalConfig, DevUIGlobalConfigToken } from 'ng-devui/utils';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
@@ -24,10 +24,11 @@ const devui_global_config: DevUIGlobalConfig = { global: { showAnimation: false 
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AccordionModule,
     LayoutModule,
+    AppRoutingModule,
     HeaderModule,
     FooterModule,
-    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

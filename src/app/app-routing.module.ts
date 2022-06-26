@@ -4,12 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'repoAxis',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
-    path: 'repoAxis',
+    path: 'home',
+    loadChildren: () => import('./content/content.module').then((m) => m.ContentModule),
+  },
+  {
+    path: 'RepoAxis',
     loadChildren: () => import('./repo-axis/repo-axis.module').then((m) => m.RepoAxisModule),
+  },
+  {
+    path: 'NowcoderTest',
+    loadChildren: () => import('./nowcoder-test/nowcoder-test.module').then((m) => m.NowcoderTestModule),
   },
 ];
 

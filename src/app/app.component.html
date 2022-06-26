@@ -4,6 +4,9 @@
       <app-header></app-header>
     </d-header>
     <d-layout>
+      <d-aside>
+        <d-accordion linkType="dependOnLinkTypeKey" [data]="menu"></d-accordion>
+      </d-aside>
       <d-content>
         <router-outlet></router-outlet>
       </d-content>
