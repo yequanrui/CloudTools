@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { template } from './nowcoder-test.data';
 
 @Component({
   selector: 'nowcoder-test',
@@ -7,13 +8,7 @@ import { Component } from '@angular/core';
 })
 export class NowcoderTestComponent  {
   timeout = 2000;
-  template = `function func(line) {
-  // TODO
-}
-let line;
-while ((line = readline())) {
-  func(line);
-}`;
+  template = template;
   code = '';
   input = '';
   output = '';
@@ -39,7 +34,6 @@ while ((line = readline())) {
     const line = readlineGenerator();
     const readline = () => line.next().value;
     const print = (str) => {
-      console.log(str);
       self.postMessage(str.toString());
     };
     // 报错则传出
