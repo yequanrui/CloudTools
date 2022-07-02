@@ -19,6 +19,15 @@
     "provence": "Provence",
     "galaxy": "Galaxy"
   },
+  "menu": {
+    "management": "Management",
+    "repoAxis": "Repository Timeline",
+    "development": "Development",
+    "jsEquality": "Equality in JavaScript",
+    "nowcoderTest": "Nowcoder Test",
+    "office": "Office",
+    "acousticCalc": "Acoustic calculator"
+  },
   "repoAxis": {
     "archived": "Archived"
   }
