@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared';
 import { NowcoderTestRoutingModule } from './nowcoder-test-routing.module';
 import { NowcoderTestComponent } from './nowcoder-test.component';
-import { AlertModule, ButtonModule, InputNumberModule, LayoutModule, TextareaModule, TextInputModule } from 'ng-devui';
+import { AlertModule, ButtonModule, InputNumberModule, LayoutModule, SelectModule, TextareaModule, TextInputModule } from 'ng-devui';
 
 @NgModule({
   imports: [
@@ -10,6 +10,7 @@ import { AlertModule, ButtonModule, InputNumberModule, LayoutModule, TextareaMod
     ButtonModule,
     InputNumberModule,
     LayoutModule,
+    SelectModule,
     TextareaModule,
     TextInputModule,
     SharedModule,

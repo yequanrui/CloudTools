@@ -7,7 +7,10 @@
   background-size: 100% 100%;
   > d-layout {
     height: 100vh;
-    d-aside d-accordion {
+    d-header {
+      z-index: 2;
+    }
+    d-splitter {
       height: 100%;
     }
     d-content {

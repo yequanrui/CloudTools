@@ -1,17 +1,27 @@
 import { Component } from '@angular/core';
-import { template } from './nowcoder-test.data';
+import { IDemo, ITest } from '@data/test';
+import { template, tests } from './nowcoder-test.data';
 
 @Component({
   selector: 'nowcoder-test',
   templateUrl: './nowcoder-test.component.html',
   styleUrls: [],
 })
-export class NowcoderTestComponent  {
+export class NowcoderTestComponent {
   timeout = 2000;
   template = template;
+  tests: ITest[] = tests;
+  test!: ITest;
+  demos: IDemo[] = [];
+  demo!: IDemo;
   code = '';
   input = '';
   output = '';
+
+  selectTest(test: any) {
+    this.code = test.code;
+    this.demos = test.demos;
+  }
 
   setCode(code = '') {
     this.code = code;

@@ -1,0 +1,9 @@
+<d-accordion accordionType="embed" linkType="dependOnLinkTypeKey" [autoOpenActiveMenu]="true" [restrictOneOpen]="true"
+  [data]="menu" [menuItemTemplate]="menuTemplate" (activeItemChange)="activeItemChange($event)">
+</d-accordion>
+<ng-template #menuTemplate let-item="item">
+  <div class="menu-item">
+    {{item.title}}
+    <d-badge status="info" [count]="item.children?.length"></d-badge>
+  </div>
+</ng-template>

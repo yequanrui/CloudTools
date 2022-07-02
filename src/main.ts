@@ -6,10 +6,6 @@ import { greenLightTheme, greenDarkTheme, devuiLargeFontTheme } from './app/head
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
-
 const themes = {
   'devui-light-theme': devuiLightTheme,
   'devui-dark-theme': devuiDarkTheme,
@@ -23,6 +19,10 @@ const themes = {
   'galaxy-theme': galaxyTheme,
 };
 ThemeServiceInit(themes, undefined, undefined, undefined, true);
+
+if (environment.production) {
+  enableProdMode();
+}
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

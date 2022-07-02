@@ -1,0 +1,70 @@
+@import '../devui';
+
+.calc {
+  background: $devui-feedback-overlay-bg;
+  width: 550px;
+  height: 500px;
+  margin: 50px auto;
+  border-radius: $devui-border-radius-feedback;
+  box-shadow: $devui-shadow-length-feedback-overlay $devui-feedback-overlay-shadow;
+  .title {
+    font-size: $devui-font-size-modal-title;
+    line-height: 55px;
+    text-indent: 30px;
+    color: $devui-feedback-overlay-text;
+  }
+  .result {
+    background: $devui-primary-bg;
+    width: 490px;
+    margin: 0 auto;
+    padding: 0 8px;
+    border: 1px solid $devui-primary-line;
+    border-radius: $devui-border-radius-card;
+    font-size: 50px;
+    text-align: right;
+    overflow: hidden;
+  }
+  .operator {
+    width: 500px;
+    height: 300px;
+    margin: 30px auto 0;
+    ul li {
+      background: $devui-primary;
+      width: 80px;
+      height: 60px;
+      margin: 10px;
+      border-radius: $devui-border-radius-card;
+      box-shadow: $devui-shadow-length-base $devui-shadow;
+      color: $devui-text;
+      font-family: fangsong;
+      font-size: $devui-font-size-data-overview;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      cursor: pointer;
+      &:hover {
+        background: $devui-primary-hover;
+      }
+      &:active {
+        background: $devui-primary-active;
+      }
+      &.tool {
+        background: $devui-contrast;
+        &:hover {
+          background: $devui-contrast-hover;
+        }
+        &:active {
+          background: $devui-contrast-active;
+        }
+      }
+      &.tool2 {
+        background: $devui-success;
+        &:active {
+          background: $devui-success;
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,15 @@
     "provence": "普罗旺斯",
     "galaxy": "追光"
   },
+  "menu": {
+    "management": "记录管理",
+    "repoAxis": "仓库时间轴",
+    "development": "编程开发",
+    "jsEquality": "JavaScript等式对照表",
+    "nowcoderTest": "牛客网测试环境",
+    "office": "办公处理",
+    "acousticCalc": "有声计算器"
+  },
   "repoAxis": {
     "archived": "归档"
   }

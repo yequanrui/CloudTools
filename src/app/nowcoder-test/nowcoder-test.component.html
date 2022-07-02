@@ -7,6 +7,7 @@
   <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
     <d-row [dFlex]="0.64" [dAlign]="'center'" [dJustify]="'between'">
       <d-button bsStyle="primary" (btnClick)="setCode(template)">代码模板</d-button>
+      <d-select [options]="tests" [(ngModel)]="test" (valueChange)="selectTest($event)"></d-select>
       <d-button bsStyle="common" (btnClick)="setCode()">清空代码</d-button>
     </d-row>
     <d-row [dFlex]="0.34" [dAlign]="'center'" [dJustify]="'end'">

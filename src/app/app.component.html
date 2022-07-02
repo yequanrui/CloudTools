@@ -5,7 +5,13 @@
     </d-header>
     <d-layout>
       <d-aside>
-        <d-accordion linkType="dependOnLinkTypeKey" [data]="menu"></d-accordion>
+        <d-splitter [orientation]="'horizontal'" [style.width]="collapsed?0:undefined">
+          <d-splitter-pane size="100%" [collapsible]="true" [collapsed]="collapsed"
+            (collapsedChange)="collapsed=$event">
+            <app-menu></app-menu>
+          </d-splitter-pane>
+          <d-splitter-pane size="0"></d-splitter-pane>
+        </d-splitter>
       </d-aside>
       <d-content>
         <router-outlet></router-outlet>
