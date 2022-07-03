@@ -5,7 +5,13 @@ import { template, tests } from './nowcoder-test.data';
 @Component({
   selector: 'nowcoder-test',
   templateUrl: './nowcoder-test.component.html',
-  styleUrls: [],
+  styles: [
+    `
+      textarea {
+        height: 100%;
+      }
+    `,
+  ],
 })
 export class NowcoderTestComponent {
   timeout = 2000;
@@ -17,10 +23,19 @@ export class NowcoderTestComponent {
   code = '';
   input = '';
   output = '';
+  result = '';
 
-  selectTest(test: any) {
-    this.code = test.code;
-    this.demos = test.demos;
+  selectTest(test: ITest) {
+    this.code = test?.code || '';
+    this.demos = test?.demos || [];
+    this.demo = this.demos[0];
+    this.selectDemo(this.demo);
+  }
+
+  selectDemo(demo: IDemo) {
+    this.input = demo?.input || '';
+    this.output = demo?.output ? `${demo.output}\n` : '';
+    this.result = '';
   }
 
   setCode(code = '') {
@@ -32,10 +47,10 @@ export class NowcoderTestComponent {
   }
 
   runCode() {
-    this.output = '';
+    this.result = '';
     // 在Web Worker中定义一些方法
     const codeText = `
-    const inputText = \`${this.input}\`;
+    const inputText = String.raw\`${this.input}\`;
     function* readlineGenerator() {
       const text = inputText.split("\\n");
       let line = 0;
@@ -58,7 +73,7 @@ export class NowcoderTestComponent {
     // 通过window.URL创建一个url指向Blob对象，并构建Worker
     const worker = new Worker(window.URL.createObjectURL(blob));
     // 监听Web Worker收信事件
-    worker.addEventListener('message', (e) => (this.output += `${e.data}\n`));
+    worker.addEventListener('message', (e) => (this.result += `${e.data}\n`));
     // 超时直接停止Worker
     setTimeout(() => {
       worker.terminate();

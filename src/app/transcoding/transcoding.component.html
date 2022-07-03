@@ -1,0 +1,43 @@
+<d-row [dFlex]="1" [dFlexContainer]="'column'" [dAlign]="'stretch'" [dGutter]="[0,8]" [dStyle]="{'height':'100%'}">
+  <d-col>
+    <h3>{{'menu.transcoding'|translate}}</h3>
+  </d-col>
+  <d-col>
+    <d-tabs type="tabs" [showContent]="false" [activeTab]="activeTab.id" (activeTabChange)="activeTabChange($event)">
+      <d-tab *ngFor="let tab of tabs" [id]="tab.id" [title]="tab.title"></d-tab>
+    </d-tabs>
+  </d-col>
+  <d-col [dFlex]="1">
+    <d-row [dFlex]="1" [dFlexContainer]="'row'" [dJustify]="'between'" [dStyle]="{'height':'100%'}">
+      <d-col [dFlex]="0.44">
+        <textarea dTextarea [placeholder]="activeTab.sourceName" [style.height.%]="100" [(ngModel)]="source">
+        </textarea>
+      </d-col>
+      <d-col [dFlex]="0.12">
+        <d-row [dFlex]="0.4" [dFlexContainer]="'column'" [dAlign]="'center'" [dJustify]="'center'">
+          <div *ngIf="activeTab.id===0" [dGutter]="[8, 8]">
+            <d-radio name="url-radio" [style.margin-bottom.px]="20" [(ngModel)]="urlRadio" *ngFor="let ur of urlRadios"
+              [value]="ur" dPopover trigger="hover" [content]="ur.title" [controlled]="true">
+              {{ur.name}}
+            </d-radio>
+          </div>
+          <div *ngIf="activeTab.id===4">
+            <d-checkbox [label]="'不转换字母和数字'" [isShowTitle]="false" [ngModel]="ignoreLetter">
+            </d-checkbox>
+          </div>
+        </d-row>
+        <d-row [dFlex]="0.4" [dFlexContainer]="'column'" [dAlign]="'center'" [dJustify]="'around'"
+          [dStyle]="{'height':'50%'}">
+          <d-button icon="icon-arrow-right" bsStyle="primary" bsSize="xs" shape="circle" (btnClick)="encode()">
+          </d-button>
+          <d-button icon="icon-arrow-left" bsStyle="primary" bsSize="xs" shape="circle" (btnClick)="decode()">
+          </d-button>
+        </d-row>
+      </d-col>
+      <d-col [dFlex]="0.44">
+        <textarea dTextarea [placeholder]="activeTab.targetName" [style.height.%]="100" [(ngModel)]="target">
+        </textarea>
+      </d-col>
+    </d-row>
+  </d-col>
+</d-row>

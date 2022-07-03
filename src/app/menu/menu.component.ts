@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
         {
           title: this.translate.instant('menu.development'),
           children: [
+            { title: this.translate.instant('menu.transcoding'), link: '/Transcoding', linkType: 'routerLink' },
             { title: this.translate.instant('menu.jsEquality'), link: '/JsEquality', linkType: 'routerLink' },
             { title: this.translate.instant('menu.nowcoderTest'), link: '/NowcoderTest', linkType: 'routerLink' },
           ],
