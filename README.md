@@ -4,10 +4,11 @@
 >
 > Included:
 >
-> 1. Repository Timeline -- 仓库时间轴(GitHub)
-> 2. En
-> 3. Equality in JavaScript -- JavaScript等式对照表
-> 4. NowCoder Test -- 牛客网测试环境(JavaScript V8)
+> 1. [Repository Timeline -- 仓库时间轴(GitHub)](https://yequanrui.github.io/CloudTools/RepoAxis)
+> 2. [Transcoding -- 在线编码转换](https://yequanrui.github.io/CloudTools/Transcoding)
+> 3. [Equality in JavaScript -- JavaScript等式对照表](https://yequanrui.github.io/CloudTools/JsEquality)
+> 4. [NowCoder Test -- 牛客网测试环境(JavaScript V8)](https://yequanrui.github.io/CloudTools/NowcoderTest)
+> 5. [Acoustic calculator -- 有声计算器](https://yequanrui.github.io/CloudTools/AcousticCalc)
 
 [![version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
 [![types](https://img.shields.io/npm/types/@angular/core)](https://www.tslang.cn/)

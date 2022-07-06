@@ -136,6 +136,7 @@ while ((line = readline())) {
   },
   {
     name: 'HJ1 字符串最后一个单词的长度',
+    link: 'https://www.nowcoder.com/practice/8c949ea5f36f422594b306a2300315da?tpId=37',
     code: `function func(line) {
   // 使用lastIndexOf取最后一个空格的序号，用总长度减去该序号再减1即是最后一项的长度
   print(line.length - 1 - line.lastIndexOf(" "));
@@ -149,6 +150,120 @@ while ((line = readline())) {
         name: '示例1',
         input: 'hello nowcoder',
         output: '8',
+      },
+    ],
+  },
+  {
+    name: 'HJ66 配置文件恢复',
+    link: 'https://www.nowcoder.com/practice/ca6ac6ef9538419abf6f883f7d6f6ee5?tpId=37',
+    code: `function func(line) {
+  const map = {
+    "reset board": "board fault",
+    "board add": "where to add",
+    "board delete": "no board at all",
+    "reboot backplane": "impossible",
+    "backplane abort": "install first",
+    "he he": "unknown command",
+  };
+  const arr = line.split(" ");
+  let cmd = "unknown command";
+  if (arr.length === 1) {
+    "reset".startsWith(arr[0]) && (cmd = "reset what");
+  } else if (arr.length === 2) {
+    for (let key in map) {
+      const keys = key.split(" ");
+      if (keys[0].startsWith(arr[0]) && keys[1].startsWith(arr[1])) {
+        cmd = map[key];
+        break;
+      }
+    }
+  }
+  print(cmd);
+}
+let line;
+while ((line = readline())) {
+  func(line);
+}`,
+    demos: [
+      {
+        name: '示例1',
+        input: `reset
+reset board
+board add
+board delet
+reboot backplane
+backplane abort`,
+        output: `reset what
+board fault
+where to add
+no board at all
+impossible
+install first`,
+      },
+      {
+        name: '示例2',
+        input: `r b
+b a
+bo a
+reb
+r
+res`,
+        output: `unknown command
+unknown command
+where to add
+unknown command
+reset what
+reset what`,
+      },
+    ],
+  },
+  {
+    name: 'HJ70 矩阵乘法计算量估算',
+    link: 'https://www.nowcoder.com/practice/15e41630514445719a942e004edc0a5b?tpId=37',
+    code: `function func(line) {
+  // 创建二维数组保存输入矩阵
+  const arr = [];
+  for (let i = 0; i < line; i++) {
+    arr[i] = readline().trim().split(" ").map(Number);
+  }
+  // 获取计算法则
+  const method = readline();
+  // result模拟栈结构，保存待计算的数据
+  let result = [];
+  let count = 0;
+  // 遍历计算法则字符串
+  for (let i = 0; i < method.length; i++) {
+    if (method[i] === "(") {
+      // 遇到前括号不做处理
+    } else if (method[i] === ")") {
+      // 当遇到后括号的时候，出栈计算并将结果重新入栈
+      if (result.length >= 2) {
+        const second = result.pop();
+        const first = result.pop();
+        count += first[0] * first[1] * second[1];
+        result.push([first[0], second[1]]);
+      }
+    } else {
+      // 遇到非括号，进行入栈操作
+      // 通过字母的ascii值判断对应矩阵的顺序
+      result.push(arr[method.charCodeAt(i) - 65]);
+    }
+  }
+  print(count);
+}
+let line;
+while ((line = readline())) {
+  func(line);
+}`,
+    demos: [
+      {
+        name: '示例1',
+        input: `3
+50 10
+10 20
+20 5
+(A(BC))`,
+        output: '3500',
       },
     ],
   },

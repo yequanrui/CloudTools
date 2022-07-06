@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IDemo, ITest } from '@data/test';
+import { HelperUtils } from 'ng-devui';
 import { template, tests } from './nowcoder-test.data';
 
 @Component({
@@ -24,6 +25,10 @@ export class NowcoderTestComponent {
   input = '';
   output = '';
   result = '';
+
+  goToLink(link = '') {
+    link && HelperUtils.jumpOuterUrl(link);
+  }
 
   selectTest(test: ITest) {
     this.code = test?.code || '';
@@ -66,8 +71,7 @@ export class NowcoderTestComponent {
       (function () {${this.code}})();
     } catch (e) {
       print(e);
-    }
-    `;
+    }`;
     // 构建一个Blob对象
     const blob = new Blob([codeText]);
     // 通过window.URL创建一个url指向Blob对象，并构建Worker

@@ -5,12 +5,19 @@
     </d-alert>
   </d-col>
   <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
-    <d-row [dFlex]="0.64" [dAlign]="'center'" [dJustify]="'between'">
-      <d-button bsStyle="primary" (btnClick)="setCode(template)">代码模板</d-button>
-      <d-select [allowClear]="true" [isSearch]="true" filterKey="name" [options]="tests" [(ngModel)]="test"
-        (valueChange)="selectTest($event)">
-      </d-select>
-      <d-button bsStyle="common" (btnClick)="setCode()">清空代码</d-button>
+    <d-row [dFlex]="0.64" [dAlign]="'center'" [dJustify]="'between'" style="flex-wrap:nowarp;">
+      <d-col [dFlex]="0.5">
+        <d-select [width]="180" [allowClear]="true" [isSearch]="true" filterKey="name" [options]="tests"
+          [(ngModel)]="test" (valueChange)="selectTest($event)">
+        </d-select>
+      </d-col>
+      <d-col [dSpace]="[0,8]">
+        <span>
+          <d-button *ngIf="test?.link" bsStyle="text" (btnClick)="goToLink(test.link)">跳转原题</d-button>
+        </span>
+        <d-button bsStyle="primary" (btnClick)="setCode(template)">代码模板</d-button>
+        <d-button bsStyle="common" (btnClick)="setCode()">清空代码</d-button>
+      </d-col>
     </d-row>
     <d-row [dFlex]="0.34" [dAlign]="'center'" [dJustify]="'between'">
       <d-col [dFlex]="0.5">
@@ -18,7 +25,7 @@
           (valueChange)="selectDemo($event)">
         </d-select>
       </d-col>
-      <d-col [dAlign]="'center'" [dJustify]="'end'">
+      <d-col>
         超时限制（毫秒）: <d-input-number [(ngModel)]="timeout"></d-input-number>
       </d-col>
     </d-row>
@@ -28,21 +35,21 @@
       <d-col [dFlex]="0.64">
         <textarea dTextarea spellcheck="false" placeholder="测试代码" [(ngModel)]="code"></textarea>
       </d-col>
-      <d-col [dFlex]="0.34" [dFlexContainer]="'column'">
-        <d-row [dFlex]="0.4">
+      <d-col [dFlex]="0.34" [dFlexContainer]="'column'" [dSpace]="[8,0]">
+        <d-row [dFlex]="0.5">
           <textarea dTextarea spellcheck="false" placeholder="输入用例" [(ngModel)]="input"></textarea>
         </d-row>
-        <d-row [dFlex]="0.1" [dAlign]="'center'" [dJustify]="'between'">
+        <d-row [dAlign]="'center'" [dJustify]="'between'">
           <d-button bsStyle="primary" (btnClick)="runCode()">执行代码</d-button>
           <d-button bsStyle="common" (btnClick)="setInput()">清空输入</d-button>
         </d-row>
-        <d-row [dFlex]="0.5" [dFlexContainer]="'row'">
+        <d-row [dFlex]="0.5" [dFlexContainer]="'row'" [dSpace]="[0,8]">
           <d-col [dFlex]="0.5">
             <textarea dTextarea spellcheck="false" placeholder="预计输出结果" [(ngModel)]="output"></textarea>
           </d-col>
           <d-col [dFlex]="0.5">
             <textarea dTextarea readonly spellcheck="false" placeholder="实际输出结果" [(ngModel)]="result"
-              [error]="!!output&&result!==output">
+              [error]="!!result&&result!==output">
             </textarea>
           </d-col>
         </d-row>
