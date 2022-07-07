@@ -170,13 +170,15 @@ while ((line = readline())) {
   if (arr.length === 1) {
     "reset".startsWith(arr[0]) && (cmd = "reset what");
   } else if (arr.length === 2) {
+    const cmds = [];
     for (let key in map) {
       const keys = key.split(" ");
       if (keys[0].startsWith(arr[0]) && keys[1].startsWith(arr[1])) {
-        cmd = map[key];
-        break;
+        cmds.push(map[key]);
       }
     }
+    // 唯一确定命令才赋值
+    cmds.length === 1 && (cmd = cmds[0]);
   }
   print(cmd);
 }
