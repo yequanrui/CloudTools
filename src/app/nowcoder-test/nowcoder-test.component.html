@@ -7,8 +7,15 @@
   <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
     <d-row [dFlex]="0.64" [dAlign]="'center'" [dJustify]="'between'" style="flex-wrap:nowarp;">
       <d-col [dFlex]="0.5">
-        <d-select [width]="180" [allowClear]="true" [isSearch]="true" filterKey="name" [options]="tests"
-          [(ngModel)]="test" (valueChange)="selectTest($event)">
+        <d-select [width]="180" [allowClear]="true" [isSearch]="true" placeholder="请选择题目" filterKey="name"
+          [options]="tests" [(ngModel)]="test" (valueChange)="selectTest($event)"
+          [extraConfig]="{ selectedItemWithTemplate:{enable:true} }">
+          <ng-template let-option="option" let-filterKey="filterKey">
+            {{ option[filterKey] }}
+            <d-tag *ngIf="option.diff" [tag]="difficulty[option.diff-1].title"
+              [customColor]="difficulty[option.diff-1].color">
+            </d-tag>
+          </ng-template>
         </d-select>
       </d-col>
       <d-col [dSpace]="[0,8]">
@@ -21,8 +28,8 @@
     </d-row>
     <d-row [dFlex]="0.34" [dAlign]="'center'" [dJustify]="'between'">
       <d-col [dFlex]="0.5">
-        <d-select [allowClear]="true" [isSearch]="true" filterKey="name" [options]="demos" [(ngModel)]="demo"
-          (valueChange)="selectDemo($event)">
+        <d-select [allowClear]="true" [isSearch]="true" placeholder="请选择示例" filterKey="name" [options]="demos"
+          [(ngModel)]="demo" (valueChange)="selectDemo($event)">
         </d-select>
       </d-col>
       <d-col>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IDemo, ITest } from '@data/test';
+import { IDemo, IDiff, ITest } from '@data/test';
 import { HelperUtils } from 'ng-devui';
 import { template, tests } from './nowcoder-test.data';
 
@@ -16,6 +16,15 @@ import { template, tests } from './nowcoder-test.data';
 })
 export class NowcoderTestComponent {
   timeout = 2000;
+  difficulty: IDiff[] = [
+    { id: 1, title: '入门', color: '#9faad7' },
+    { id: 2, title: '简单', color: '#5e7ce0' },
+    { id: 3, title: '中等', color: '#50d4ab' },
+    { id: 4, title: '较难', color: '#fac20a' },
+    { id: 5, title: '困难', color: '#f66f6a' },
+    { id: 6, title: '100分', color: '#6cbfff' },
+    { id: 7, title: '200分', color: '#a97af8' },
+  ];
   template = template;
   tests: ITest[] = tests;
   test!: ITest;

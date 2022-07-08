@@ -11,22 +11,23 @@ while ((line = readline())) {
 const tests: ITest[] = [
   {
     name: '华为2016校园招聘上机笔试题-1',
+    diff: 6,
     code: `function func(line) {
-  const [n, m] = line.split(" ").map(Number);
-  const s = readline().split(" ").map(Number);
+  const [n, m] = line.split(' ').map(Number);
+  const s = readline().split(' ').map(Number);
   const scores = [];
   // 给每个学生初始化原始分数
   for (let i = 0; i < n; i++) {
     scores[i] = s[i];
   }
   for (let i = 0; i < m; i++) {
-    const [c, a, b] = readline().split(" ");
-    if (c === "Q") {
+    const [c, a, b] = readline().split(' ');
+    if (c === 'Q') {
       // a和b要先判断大小，再从原始分数数组里截取，最后再打印最大值
       const [min, max] = [a, b].map(Number).sort((x, y) => x - y);
       const temp = scores.slice(min - 1, max);
       print(Math.max(...temp));
-    } else if (c === "U") {
+    } else if (c === 'U') {
       // 更新操作直接赋值即可
       scores[Number(a) - 1] = Number(b);
     }
@@ -65,11 +66,12 @@ Q 3 1`,
   },
   {
     name: '华为2016校园招聘上机笔试题-2',
+    diff: 6,
     code: `const res = {};
 function func(line) {
-  const [name, num] = line.split(" ");
+  const [name, num] = line.split(' ');
   // 长度超过16个字符，则只输出后16个字符
-  const str = name.substr(name.lastIndexOf("\\\\") + 1).substr(-16);
+  const str = name.substr(name.lastIndexOf('\\\\') + 1).substr(-16);
   res[\`\${str} \${num}\`] = (res[\`\${str} \${num}\`] || 0) + 1;
 }
 let line;
@@ -94,15 +96,16 @@ Object.keys(res)
   },
   {
     name: '华为2016校园招聘上机笔试题-3',
+    diff: 7,
     code: `function func(line) {
   // 不管谁有王炸，肯定是王炸最大
-  if (line.includes("joker JOKER")) {
-    print("joker JOKER");
+  if (line.includes('joker JOKER')) {
+    print('joker JOKER');
   } else {
     // 先拆分两手牌，再分别拆单牌
-    const [p1, p2] = line.split("-");
-    const l1 = p1.split(" ");
-    const l2 = p2.split(" ");
+    const [p1, p2] = line.split('-');
+    const l1 = p1.split(' ');
+    const l2 = p2.split(' ');
     // 谁有炸弹且另一个没有，那谁就最大
     if (l1.length === 4 && l2.length !== 4) {
       print(p1);
@@ -113,12 +116,12 @@ Object.keys(res)
     else if (l1.length === l2.length) {
       // 通过序号判断牌面大小
       function count(str) {
-        return "345678910JQKA2jokerJOKER".indexOf(str);
+        return '345678910JQKA2jokerJOKER'.indexOf(str);
       }
       print(count(l1[0]) > count(l2[0]) ? p1 : p2);
     } else {
       // 剩下的就都是异常
-      print("ERROR");
+      print('ERROR');
     }
   }
 }
@@ -135,7 +138,8 @@ while ((line = readline())) {
     ],
   },
   {
-    name: 'HJ1 字符串最后一个单词的长度',
+    name: 'HJ1. 字符串最后一个单词的长度',
+    diff: 2,
     link: 'https://www.nowcoder.com/practice/8c949ea5f36f422594b306a2300315da?tpId=37',
     code: `function func(line) {
   // 使用lastIndexOf取最后一个空格的序号，用总长度减去该序号再减1即是最后一项的长度
@@ -154,25 +158,171 @@ while ((line = readline())) {
     ],
   },
   {
-    name: 'HJ66 配置文件恢复',
+    name: 'HJ3. 明明的随机数',
+    diff: 3,
+    link: 'https://www.nowcoder.com/practice/3245215fffb84b7b81285493eae92ff0?tpId=37',
+    code: `const res = [];
+function func(line) {
+  res.push(line);
+  // 如果除首位后的数组长度等于首位的值，进入计算
+  if (res.length - 1 === Number(res[0])) {
+    // 去掉首位
+    res.shift();
+    // 利用Set去重，从小到大排序并打印
+    Array.from(new Set(res))
+      .sort((a, b) => a - b)
+      .map((e) => print(e));
+  }
+}
+let line;
+while ((line = readline())) {
+  func(line);
+}`,
+    demos: [
+      {
+        name: '示例1',
+        input: `3
+2
+2
+1`,
+        output: `1
+2`,
+      },
+    ],
+  },
+  {
+    name: 'HJ7. 取近似值',
+    diff: 1,
+    link: 'https://www.nowcoder.com/practice/3ab09737afb645cc82c35d56a5ce802a?tpId=37',
+    code: `function func(line) {
+  // 使用parseFloat判断是否浮点数，再使用round取整
+  !isNaN(parseFloat(line)) && print(Math.round(line));
+}
+let line;
+while ((line = readline())) {
+  func(line);
+}`,
+    demos: [
+      {
+        name: '示例1',
+        input: '5.5',
+        output: '6',
+      },
+      {
+        name: '示例2',
+        input: '2.499',
+        output: '2',
+      },
+    ],
+  },
+  {
+    name: 'HJ28. 素数伴侣',
+    diff: 5,
+    link: 'https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e?tpId=37',
+    code: `const res = [];
+function func(line) {
+  res.push(line);
+  // 长度为2时进入计算
+  if (res.length === 2) {
+    // 素数：只能被1和自身整除的数
+    function isPrime(n) {
+      if (n >= 2) {
+        for (let i = 2; i < Math.ceil(n / 2); i++) {
+          if (n % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      } else {
+        return false;
+      }
+    }
+    // 匈牙利算法：先配对的先得，后配对的能让就让，让不了时就是最大配对数
+    function find(oddNum, evenArr, used, matchArr) {
+      for (let i = 0; i < evenArr.length; i++) {
+        // 循环每个偶数与传入的奇数配对
+        if (isPrime(oddNum + evenArr[i]) && used[i] == 0) {
+          // 如果当前偶数与传入的奇数匹配，并且当前偶数位还没有匹配过奇数
+          used[i] = 1;
+          // 如果第i个偶数没有伴侣
+          // 或者第i个偶数原来有伴侣，并且该伴侣能够重新找到伴侣的话(这里有递归调用)
+          // 则奇数x可以设置为第i个偶数的伴侣
+          // 这里采用了匈牙利算法，能让则让
+          if (matchArr[i] == 0 || find(matchArr[i], evenArr, used, matchArr)) {
+            matchArr[i] = oddNum;
+            return true;
+          }
+        }
+      }
+      //遍历完偶数都没有可以与传入奇数做伴侣的，该奇数只能孤独终老了
+      return false;
+    }
+    // 传入每一轮输入的偶数和奇数序列
+    function getRes(oddArr, evenArr) {
+      // 构造matchArr用于存放和偶数序列能配对的奇数的值，不是下标
+      const matchArr = new Array(evenArr.length).fill(0);
+      // count存放能配对的奇数个数
+      let count = 0;
+      // 循环奇数
+      for (let i = 0; i < oddArr.length; i++) {
+        // 构造used存放能偶数是否已经配对，记录已经配对的下标，重点是每次奇数遍历需重置，递归时不重置
+        // 可以理解对每个新传去的奇数来说，所有偶数都是潜在对象，当对递归的原配奇数来讲，不能再去配对已经配对的偶数
+        const used = new Array(evenArr.length).fill(0);
+        find(oddArr[i], evenArr, used, matchArr) && count++;
+      }
+      print(count);
+    }
+    // 利用split分割成数组，slice再次分割，保证数组长度和前面输入的长度一致
+    const arr = res[1].split(' ').slice(0, Number(res[0])).map(Number);
+    // 素数中除了2都是奇数，且此处不可能为2，所以输入的两个正整数只能是一奇一偶，先分离奇偶
+    const [oddArr, evenArr] = [[], []];
+    arr.forEach((item) => {
+      item % 2 !== 0 ? oddArr.push(item) : evenArr.push(item);
+    });
+    // 将每一轮的奇偶数组传出
+    getRes(oddArr, evenArr);
+  }
+}
+let line;
+while ((line = readline())) {
+  func(line);
+}`,
+    demos: [
+      {
+        name: '示例1',
+        input: `4
+2 5 6 13`,
+        output: '2',
+      },
+      {
+        name: '示例2',
+        input: `2
+3 6`,
+        output: '0',
+      },
+    ],
+  },
+  {
+    name: 'HJ66. 配置文件恢复',
+    diff: 3,
     link: 'https://www.nowcoder.com/practice/ca6ac6ef9538419abf6f883f7d6f6ee5?tpId=37',
     code: `function func(line) {
   const map = {
-    "reset board": "board fault",
-    "board add": "where to add",
-    "board delete": "no board at all",
-    "reboot backplane": "impossible",
-    "backplane abort": "install first",
-    "he he": "unknown command",
+    'reset board': 'board fault',
+    'board add': 'where to add',
+    'board delete': 'no board at all',
+    'reboot backplane': 'impossible',
+    'backplane abort': 'install first',
+    'he he': 'unknown command',
   };
-  const arr = line.split(" ");
-  let cmd = "unknown command";
+  const arr = line.split(' ');
+  let cmd = 'unknown command';
   if (arr.length === 1) {
-    "reset".startsWith(arr[0]) && (cmd = "reset what");
+    'reset'.startsWith(arr[0]) && (cmd = 'reset what');
   } else if (arr.length === 2) {
     const cmds = [];
     for (let key in map) {
-      const keys = key.split(" ");
+      const keys = key.split(' ');
       if (keys[0].startsWith(arr[0]) && keys[1].startsWith(arr[1])) {
         cmds.push(map[key]);
       }
@@ -220,13 +370,14 @@ reset what`,
     ],
   },
   {
-    name: 'HJ70 矩阵乘法计算量估算',
+    name: 'HJ70. 矩阵乘法计算量估算',
+    diff: 3,
     link: 'https://www.nowcoder.com/practice/15e41630514445719a942e004edc0a5b?tpId=37',
     code: `function func(line) {
   // 创建二维数组保存输入矩阵
   const arr = [];
   for (let i = 0; i < line; i++) {
-    arr[i] = readline().trim().split(" ").map(Number);
+    arr[i] = readline().trim().split(' ').map(Number);
   }
   // 获取计算法则
   const method = readline();
@@ -235,9 +386,9 @@ reset what`,
   let count = 0;
   // 遍历计算法则字符串
   for (let i = 0; i < method.length; i++) {
-    if (method[i] === "(") {
+    if (method[i] === '(') {
       // 遇到前括号不做处理
-    } else if (method[i] === ")") {
+    } else if (method[i] === ')') {
       // 当遇到后括号的时候，出栈计算并将结果重新入栈
       if (result.length >= 2) {
         const second = result.pop();
