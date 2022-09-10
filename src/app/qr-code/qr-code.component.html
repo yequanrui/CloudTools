@@ -1,0 +1,14 @@
+<d-card class="qr-code">
+  <d-card-header>
+    <d-card-title>{{'menu.qrCode'|translate}}</d-card-title>
+    <d-card-subtitle>{{'qrCode.remark'|translate}}</d-card-subtitle>
+  </d-card-header>
+  <d-card-content>
+    <d-input-number class="qr-size" [min]="80" [max]="320" [step]="80" [(ngModel)]="qrSize"></d-input-number>
+    <textarea dTextarea [placeholder]="'qrCode.placeholder'|translate" [(ngModel)]="qrText"></textarea>
+  </d-card-content>
+  <d-card-actions [align]="'spaceBetween'">
+    <d-button [disabled]="!qrText" (btnClick)="generateCode()">{{btnText}}</d-button>
+    <img [attr.src]="qrSrc" (load)="loadImg()">
+  </d-card-actions>
+</d-card>

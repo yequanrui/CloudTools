@@ -9,6 +9,7 @@
 > 3. [Equality in JavaScript -- JavaScript等式对照表](https://yequanrui.github.io/CloudTools/JsEquality)
 > 4. [NowCoder Test -- 牛客网测试环境(JavaScript V8)](https://yequanrui.github.io/CloudTools/NowcoderTest)
 > 5. [Acoustic calculator -- 有声计算器](https://yequanrui.github.io/CloudTools/AcousticCalc)
+> 6. [QRCode Generator -- 二维码生成器](https://yequanrui.github.io/CloudTools/QRCode)
 
 [![version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
 [![types](https://img.shields.io/npm/types/@angular/core)](https://www.tslang.cn/)
@@ -20,7 +21,7 @@
 [![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](http://angular.cn/)
 [![devui](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/ng-devui)](https://devui.design/home)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
 ## Development server
 

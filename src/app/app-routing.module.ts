@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'JsEquality', loadChildren: () => import('./js-equality/js-equality.module').then((m) => m.JsEqualityModule) },
   { path: 'NowcoderTest', loadChildren: () => import('./nowcoder-test/nowcoder-test.module').then((m) => m.NowcoderTestModule) },
   { path: 'AcousticCalc', loadChildren: () => import('./acoustic-calc/acoustic-calc.module').then((m) => m.AcousticCalcModule) },
+  { path: 'QRCode', loadChildren: () => import('./qr-code/qr-code.module').then(m => m.QrCodeModule) },
 ];
 
 @NgModule({

@@ -2,14 +2,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Theme, ThemeService, ThemeServiceFollowSystemOff, ThemeServiceFollowSystemOn } from 'ng-devui/theme';
 import { Subscription } from 'rxjs';
 import { LargeFontSize } from './theme-data-more';
-
-declare global {
-  interface Window {
-    devuiThemeService: ThemeService;
-    devuiThemes: { [themeName: string]: Theme };
-    devuiCurrentTheme: string;
-  }
-}
+import { themePickerImg } from './theme-picker-img';
 
 @Component({
   selector: 'theme-picker',
@@ -17,23 +10,22 @@ declare global {
   styleUrls: ['./theme-picker.component.scss'],
 })
 export class ThemePickerComponent implements OnInit, OnDestroy {
-  sub: Subscription | undefined;
+  sub: Subscription;
   themeService!: ThemeService;
-  themes!: { [themeName: string]: Theme };
-  theme!: string;
+  themes: Theme[] = [];
+  theme: string = 'devui-light-theme';
   themeMode: 'light' | 'dark' = 'light';
   themePrefix: 'devui' | 'green' | string = 'devui';
-  themePrefersColorScheme!: boolean;
+  themePrefersColorScheme: boolean;
   largeFontSizeMode = false;
-  largeFontTheme!: Theme;
-  fontSize: 'normal' | 'large' = 'normal';
+  largeFontTheme: Theme;
   activeThemeType: string | number = 'devuiTheme';
   advancedThemeList = [
-    { value: 'infinity', url: 'assets/img/infinity.png' },
-    { value: 'sweet', url: 'assets/img/sweet.png' },
-    { value: 'provence', url: 'assets/img/provence.png' },
-    { value: 'deep', url: 'assets/img/deep.png' },
-    { value: 'galaxy', url: 'assets/img/galaxy.png' },
+    { value: 'infinity', url: themePickerImg.infinity },
+    { value: 'sweet', url: themePickerImg.sweet },
+    { value: 'provence', url: themePickerImg.provence },
+    { value: 'deep', url: themePickerImg.deep },
+    { value: 'galaxy', url: themePickerImg.galaxy },
   ];
   currentAdvancedTheme = 'infinity';
 
@@ -41,10 +33,13 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (typeof window !== 'undefined') {
-      this.themeService = window.devuiThemeService;
-      this.themes = window.devuiThemes;
-      this.theme = window.devuiCurrentTheme;
+      this.themeService = window['devuiThemeService'];
+      this.themes = window['devuiThemes'];
+      this.theme = window['devuiCurrentTheme'];
     }
+    const themeName = localStorage.getItem('user-custom-theme')?.split('-')[0];
+    this.currentAdvancedTheme = this.advancedThemeList.find((theme) => theme.value === themeName) ? themeName : 'infinity';
+    this.advancedThemeChange(this.currentAdvancedTheme);
     this.themePrefix = this.getThemePrefix();
     this.themeMode = this.themes[this.theme]?.isDark ? 'dark' : 'light';
     this.largeFontSizeMode = this.theme === 'devui-large-font-theme';
@@ -64,22 +59,20 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
   }
 
   initTheme() {
-    if (this.checkInitThemeType()) {
-      this.activeThemeType = 'advancedTheme';
-      this.currentAdvancedTheme = this.getUserCustomTheme().split('-')[0];
-      this.advancedThemeChange(this.currentAdvancedTheme);
-    } else {
+    if (!this.checkInitThemeType()) {
       this.activeThemeType = 'devuiTheme';
       this.themesChange();
+    } else {
+      this.activeThemeType = 'advancedTheme';
+      const themeName = localStorage.getItem('user-custom-theme')?.split('-')[0];
+      this.currentAdvancedTheme = this.advancedThemeList.find((theme) => theme.value === themeName) ? themeName : 'infinity';
+      this.advancedThemeChange(this.currentAdvancedTheme);
     }
   }
 
   checkInitThemeType() {
-    return this.advancedThemeList.some((item) => this.getUserCustomTheme().startsWith(item.value));
-  }
-
-  getUserCustomTheme() {
-    return localStorage.getItem('user-custom-theme') || '';
+    const advancedThemePrefixList = ['infinity', 'sweet', 'provence', 'deep', 'galaxy'];
+    return advancedThemePrefixList.some((item) => localStorage.getItem('user-custom-theme').startsWith(item));
   }
 
   themePrefixChange(prefix: string) {
@@ -89,15 +82,12 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
 
   themesChange() {
     if (this.largeFontSizeMode) {
-      this.largeFontTheme.data = {
-        ...this.themes[`${this.themePrefix}-${this.themeMode}-theme`].data,
-        ...LargeFontSize,
-      };
+      this.largeFontTheme.data = { ...this.themes[`${this.themePrefix}-${this.themeMode}-theme`].data, ...LargeFontSize };
       this.theme = `devui-large-font-theme`;
     } else {
       this.theme = `${this.themePrefix}-${this.themeMode}-theme`;
     }
-    this.themeService && this.themeService.applyTheme(this.themes[this.theme]);
+    this.themeService.applyTheme(this.themes[this.theme]);
   }
 
   advancedThemeChange(theme: string) {

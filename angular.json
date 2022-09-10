@@ -11,9 +11,6 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -23,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [],
+            "allowedCommonJsDependencies": ["enquire.js"],
             "outputPath": "dist/CloudTools",
             "index": "src/index.html",
             "main": "src/main.ts",

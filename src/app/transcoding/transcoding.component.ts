@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'transcoding',
   templateUrl: './transcoding.component.html',
-  styleUrls: ['./transcoding.component.scss'],
+  styleUrls: [],
 })
 export class TranscodingComponent implements OnInit {
   customSource = '这是一个例子,this is a example';

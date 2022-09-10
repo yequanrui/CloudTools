@@ -36,7 +36,10 @@ export class MenuComponent implements OnInit {
         },
         {
           title: this.translate.instant('menu.office'),
-          children: [{ title: this.translate.instant('menu.acousticCalc'), link: '/AcousticCalc', linkType: 'routerLink' }],
+          children: [
+            { title: this.translate.instant('menu.acousticCalc'), link: '/AcousticCalc', linkType: 'routerLink' },
+            { title: this.translate.instant('menu.qrCode'), link: '/QRCode', linkType: 'routerLink' },
+          ],
         },
       ];
     });

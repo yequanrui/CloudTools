@@ -27,9 +27,16 @@
     "jsEquality": "Equality in JavaScript",
     "nowcoderTest": "Nowcoder Test",
     "office": "Office",
-    "acousticCalc": "Acoustic Calculator"
+    "acousticCalc": "Acoustic Calculator",
+    "qrCode": "QRCode Generator"
   },
   "repoAxis": {
     "archived": "Archived"
+  },
+  "qrCode": {
+    "remark": "Enter or paste text to generate a QR code.",
+    "placeholder": "Enter or paste text",
+    "generate": "Generate",
+    "generating": "Generating..."
   }
 }
