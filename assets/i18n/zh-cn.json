@@ -28,7 +28,12 @@
     "nowcoderTest": "牛客网测试环境",
     "office": "办公处理",
     "acousticCalc": "有声计算器",
-    "qrCode": "二维码生成器"
+    "qrCode": "二维码生成器",
+    "study": "教育学习",
+    "periodicTable": "元素周期表",
+    "entertainment": "休闲娱乐",
+    "2048": "2048",
+    "sheep": "羊了个羊"
   },
   "repoAxis": {
     "archived": "归档"
@@ -38,5 +43,8 @@
     "placeholder": "输入或粘贴文本",
     "generate": "生成",
     "generating": "生成中..."
+  },
+  "periodicTable": {
+    "remark": "点击查看元素详情"
   }
 }
