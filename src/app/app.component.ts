@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.collapsed = this.router.url === '/home';
+    this.collapsed = !/^\/CloudTools\/home$/.test(location.pathname);
     this.devConfigService.set('global', { showAnimation: true });
   }
 }
