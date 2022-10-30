@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.collapsed = this.router.url === '/home';
     this.devConfigService.set('global', { showAnimation: true });
   }
 }

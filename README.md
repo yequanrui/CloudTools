@@ -4,12 +4,14 @@
 >
 > Included:
 >
-> 1. [Repository Timeline -- 仓库时间轴(GitHub)](https://yequanrui.github.io/CloudTools/RepoAxis)
-> 2. [Transcoding -- 在线编码转换](https://yequanrui.github.io/CloudTools/Transcoding)
-> 3. [Equality in JavaScript -- JavaScript等式对照表](https://yequanrui.github.io/CloudTools/JsEquality)
-> 4. [NowCoder Test -- 牛客网测试环境(JavaScript V8)](https://yequanrui.github.io/CloudTools/NowcoderTest)
-> 5. [Acoustic calculator -- 有声计算器](https://yequanrui.github.io/CloudTools/AcousticCalc)
-> 6. [QRCode Generator -- 二维码生成器](https://yequanrui.github.io/CloudTools/QRCode)
+> 1. [Repository Timeline -- 仓库时间轴(GitHub)](https://yequanrui.github.io/CloudTools/repo-axis)
+> 2. [Transcoding -- 在线编码转换](https://yequanrui.github.io/CloudTools/transcoding)
+> 3. [Equality in JavaScript -- JavaScript等式对照表](https://yequanrui.github.io/CloudTools/js-equality)
+> 4. [NowCoder Test -- 牛客网测试环境(JavaScript V8)](https://yequanrui.github.io/CloudTools/nowcoder-test)
+> 5. [Acoustic calculator -- 有声计算器](https://yequanrui.github.io/CloudTools/acoustic-calc)
+> 6. [QRCode Generator -- 二维码生成器](https://yequanrui.github.io/CloudTools/qr-code)
+> 7. [Periodic Table of Elements -- 元素周期表](https://yequanrui.github.io/CloudTools/periodic-table)
+> 8. [2048](https://yequanrui.github.io/CloudTools/puzzle-2048)
 
 [![version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
 [![types](https://img.shields.io/npm/types/@angular/core)](https://www.tslang.cn/)
@@ -21,7 +23,7 @@
 [![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](http://angular.cn/)
 [![devui](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/ng-devui)](https://devui.design/home)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
 

@@ -1,0 +1,382 @@
+<d-card class="periodic-table">
+  <d-card-header>
+    <d-card-title>{{'menu.periodicTable'|translate}}</d-card-title>
+    <d-card-subtitle>{{'periodicTable.remark'|translate}}</d-card-subtitle>
+  </d-card-header>
+  <d-card-content>
+    <table>
+      <tr>
+        <td *ngFor="let item of list" class="periodic-cell {{item.type}}" [colSpan]="item.atomicNumber===2?16:1"
+          dPopover trigger="click" [appendToBody]="true" [controlled]="true" [content]="detailTemplate">
+          {{item.id}}
+          <ng-template #detailTemplate>
+            名称 {{item.name}}
+            编号 {{item.atomicNumber}}
+            原子量 {{item.atomicWeight}}
+            电子层排布 {{item.shells}}
+            轨道 {{item.orbit}}
+            熔点 {{item.meltingPoint}}
+            沸点 {{item.boilingPoint}}
+          </ng-template>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Lithium','3','6.94','2,1','2s1','180.54 C','1347 C');">Li</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Beryllium','4','9.01218','2,2','2s2','1278 C','2970 C');">Be</a>
+        </td>
+        <td colspan="5" width="139" height="16" align="center">固体</td>
+        <td colspan="5" bgcolor="#DDDDDD" width="139" height="16" align="center">人造元素</td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Boron','5','10.81','2,3','2p1','2300 C','2550 C');">B</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Carbon','6','12.011','2,4','2p2','3500 C','4827 C');">C</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Nitrogen','7','14.0067','2,5','2p3','-209.9 C','-195.8 C');">N</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Oxygen','8','15.9994','2,6','2p4','-218.4 C','-183.0 C');">O</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Flourine','9','18.998403','2,7','2p5','-219.62 C','-188.14 C');">F</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Neon','10','20.17','2,8',' 2p6','-248.6 C','-246.1 C');">Ne</a>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Sodium','11','22.98977','2,8,1',' 3s1','97.8 C','882.9 C');">Na</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Magnesium','12','24.305','2,8,2',' 3s2','638.8 C','1090 C');">Mg</a>
+        </td>
+        <td colspan="5" bgcolor="#CCFFCC" width="139" height="16" align="center">气体</td>
+        <td colspan="5" bgcolor="#68B4FF" width="139" height="16" align="center">液体</td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Aluminum','13','26.98154','2,8,3',' 3p1','660.37 C','2467 C');">Al</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Silicon','14','28.0855','2,8,4',' 3p2','1410 C','2355 C');">Si</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Phosphorous','15','30.97376','2,8,5',' 3p3','44.1 C','280 C');">P</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Sulfur','16','32.06','2,8,6',' 3p4','112.8 C','444.6 C');">S</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Chlorine','17','35.453','2,8,7',' 3p5','-100.98 C','-34.6 C');">Cl</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="16" align="center">
+          <a href="javascript: fillitin('Argon','18','39.948','2,8,8',' 3p6','-189.3 C','-186 C');">Ar</a>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Potassium','19','39.0983','2,8,8,1',' 4s1','63.65 C','774 C');">K</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Calcium','20','40.08','2,8,8,2',' 4s2','839 C','1484.4 C');">Ca</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Scandium','21','44.9559','2,8,9,2',' 3d1','1539 C','2832 C');">Sc</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Titanium','22','47.90','2,8,10,2',' 3d2','1660 C','3287 C');">Ti</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Vandium','23','50.9415','2,8,11,2',' 3d3','1890?0 C','3380 C');">V</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Chromium','24','51.996','2,8,13,1',' 3d5','1857 C','2672 C');">Cr</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Manganese','25','54.9380','2,8,13,2',' 3d5','1245 C','1962 C');">Mn</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Iron','26','55.847','2,8,14,2',' 3d6','1535 C','2750 C');">Fe</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Cobalt','27','58.9332','2,8,15,2',' 3d7','1495 C','2870 C');">Co</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Nickel','28','58.71','2,8,16,2',' 3d8','1453 C','2732 C');">Ni</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Copper','29','63.546','2,8,18,1',' 3d10','1083 C','2567 C');">Cu</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Zinc','30','65.38','2,8,18,2',' 3d10','419.58 C','907 C');">Zn</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Gallium','31','69.735','2,8,18,3',' 4p1','29.78 C','2403 C');">Ga</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Germanium','32','72.59','2,8,18,4',' 4p2','937.4 C','2830 C');">Ge</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a
+            href="javascript: fillitin('Arsenic','33','74.9216','2,8,18,5',' 4p3','81 C @ 28ATM','Sublimes at 613')">As</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Selenium','34','78.96','2,8,18,6',' 4p4','217 C','684.9 C');">Se</a>
+        </td>
+        <td bgcolor="#68B4FF" width="30" height="13" align="center">
+          <a href="javascript: fillitin('Bromine','35','79.904','2,8,18,7',' 4p5','-7.2 C','58.78 C');">Br</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="13" align="center">
+          <a href="javascript: fillitin('Krypton','36','83.80','2,8,18,8',' 4p6','-157.2 C','-153.4 C');">Kr</a>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Rubidium','37','85.467','2,8,18,8,1',' 5s1','38.89 C','688 C');">Rb</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Strontium','38','87.62','2,8,18,8,2',' 5s2','769 C','1384 C');">Sr</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Yttrium','39','88.9059','2,8,18,9,2',' 4d1','1523 C','3337 C');">Y</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Zirconium','40','91.22','2,8,18,10,2',' 4d2','1852? C','4377 C');">Zr</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Niobium','41','92.9064','2,8,18,13,1',' 4d4','2468?0 C','4927 C');">Nb</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Molybdenum','42','95.94','2,8,18,13,1',' 4d5','2617 C','4612 C');">Mo</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="13" align="center">
+          <a href="javascript: fillitin('Technetium','43','98.9062','2,8,18,14,1',' 4d6','2200?0 C','4877 C');">Tc</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Ruthenium','44','101.07','2,8,18,15,1',' 4d7','2250 C','3900 C');">Ru</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Rhodium','45','102.9055','2,8,18,16,1',' 4d8','1966? C','3727 C');">Rh</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Palladium','46','106.4','2,8,18,18',' 4d10','1552 C','2927 C');">Pd</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Silver','47','107.868','2,8,18,18,1',' 4d10','961.93 C','2212 C');">Ag</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Cadmium','48','112.41','2,8,18,18,2',' 4d10','320.9 C','765 C');">Cd</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Indium','49','114.82','2,8,18,18,3',' 5p1','156.61 C','2000?0 C');">In</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Tin','50','118.69','2,8,18,18,4',' 5p2','231.9 C','2270 C');">Sn</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Antimony','51','121.75','2,8,18,18,5',' 5p3','630 C','1750 C');">Sb</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Tellurium','52','127.60','2,8,18,18,6',' 5p4','449.5 C','989.8 C');">Te</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Iodine','53','126.9045','2,8,18,18,7',' 5p5','113.5 C','184 C @ 35 atm')">I</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="13" align="center">
+          <a href="javascript: fillitin('Xenon','54','131.30','2,8,18,18,8',' 5p6','-111.9 C','-108.1 C');">Xe</a>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Cesium','55','132.9054','2,8,18,18,8,1',' 6s1','28.5 C','678.4 C');">Cs</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Barium','56','137.33','2,8,18,18,8,2',' 6s2','725 C','1140 C');">Ba</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Lanthanum','57','138.9055','2,8,18,18,9,2',' 5d1','920 C','3469 C');">La</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Hafnium','72','178.49','2,8,18,32,10,2',' 5d2','2150 C','5400 C');">Hf</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Tantalum','73','180.947','2,8,18,32,11,2',' 5d3','2996 C','5425?00 C');">Ta</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Tungsten','74','183.85','2,8,18,32,12,2',' 5d4','3410?0 C','5660 C');">W</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Rhenium','75','186.207','2,8,18,32,13,2',' 5d5','3180 C','5627 C');">Re</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Osmium','76','190.2','2,8,18,32,14,2',' 5d6','3045 C','5027 C');">Os</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Iridium','77','192.22','2,8,18,32,15,2',' 5d7','2410 C','4527?00 C');">Ir</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Platinum','78','195.09','2,8,18,32,17,1',' 5d9','1772 C','3827 C');">Pt</a>
+        </td>
+        <td width="29" height="13" align="center">
+          <a href="javascript: fillitin('Gold','79','196.9665','2,8,18,32,18,1',' 5d10','1064.43 C','2807 C');">Au</a>
+        </td>
+        <td bgcolor="#68B4FF" width="29" height="13" align="center">
+          <a href="javascript: fillitin('Mercury','80','200.59','2,8,18,32,18,2',' 5d10','-38.87 C','356.58 C');">Hg</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Thallium','81','204.37','2,8,18,32,18,3',' 6p1','303.5 C','1457?0C');">Tl</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Lead','82','207.2','2,8,18,32,18,4',' 6p2','327.5 C','1740 C');">Pb</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Bismuth','83','208.9804','2,8,18,32,18,5',' 6p3','271.3 C','1560?C');">Bi</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Polonium','84','(209)','2,8,18,32,18,6',' 6p4','254 C','962 C');">Po</a>
+        </td>
+        <td width="30" height="13" align="center">
+          <a href="javascript: fillitin('Astatine','85','(210)','2,8,18,32,18,7',' 6p5','302 C','337 C');">At</a>
+        </td>
+        <td bgcolor="#CCFFCC" width="30" height="13" align="center">
+          <a href="javascript: fillitin('Radon','86','(222)','2,8,18,32,18,8',' 6p6','-71 C','-61.8 C');">Rn</a>
+        </td>
+      </tr>
+      <tr>
+        <td width="29" height="5" align="center">
+          <a href="javascript: fillitin('Francium','87','(223)','2,8,18,32,18,8,1',' 7s1','27 C','677 C');">Fr</a>
+        </td>
+        <td width="29" height="5" align="center">
+          <a href="javascript: fillitin('Radium','88','226.0254','2,8,18,32,18,8,2',' 7s2','700 C','1737 C');">Ra</a>
+        </td>
+        <td width="29" height="5" align="center">
+          <a href="javascript: fillitin('Actinium','89','(227)','2,8,18,32,18,9,2',' 6d1','1050 C','3200?00 C');">Ac</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">
+          <a
+            href="javascript: fillitin('Unnilquadium','104','(260)','2,8,18,32,32,10,2',' 6d2','N/A C','N/A C');">Unq</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">
+          <a
+            href="javascript: fillitin('Unnilpentium','105','(260)','2,8,18,32,32,11,2',' 6d3','N/A C','N/A C');">Unp</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">
+          <a
+            href="javascript: fillitin('Unnilhexium','106','(263)','2,8,18,32,32,12,2',' 6d4','N/A C','N/A C');">Unh</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">
+          <a
+            href="javascript: fillitin('Unnilseptium','107','(262)','2,8,18,32,32,13,2',' 6d5','N/A C','N/A C');">Uns</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">Uno</td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">Une</td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">Uun</td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">Uuu</td>
+        <td bgcolor="#DDDDDD" width="29" height="5" align="center">Uub</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uut</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uuq</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uup</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uuh</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uus</td>
+        <td bgcolor="#DDDDDD" width="30" height="5" align="center">Uuo</td>
+      </tr>
+      <tr>
+        <td width="87" height="8" colspan="3" rowspan="2">&nbsp;</td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Cerium','58','140.12','2,8,18,20,8,2',' 4f2','795 C','3257 C');">Ce</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Praseodymium','59','140.9077','2,8,18,21,8,2',' 4f3','935 C','3127 C');">Pr</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Neodymium','60','144.24','2,8,18,22,8,2',' 4f4','1010 C','3127 C');">Nd</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Promethium','61','(145)','2,8,18,23,8,2',' 4f5','N/A C','N/A C');">Pm</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Samarium','62','150.4','2,8,18,24,8,2',' 4f6','1072 C','1900 C');">Sm</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Europium','63','151.96','2,8,18,25,8,2',' 4f7','822 C','1597 C');">Eu</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Gadolinium','64','157.25','2,8,18,25,9,2',' 4f7','1311 C','3233 C');">Gd</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Terbium','65','158.9254','2,8,18,27,8,2',' 4f9','1360 C','3041 C');">Tb</a>
+        </td>
+        <td width="29" height="16" align="center">
+          <a href="javascript: fillitin('Dysprosium','66','162.50','2,8,18,28,8,2',' 4f10','1412 C','2562 C');">Dy</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Holmium','67','164.9304','2,8,18,29,8,2',' 4f11','1470 C','2720 C');">Ho</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Erbium','68','167.26','2,8,18,30,8,2',' 4f12','1522 C','2510 C');">Er</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Thulium','69','168.9342','2,8,18,31,8,2',' 4f13','1545 C','1727 C');">Tm</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Ytterbium','70','173.04','2,8,18,32,8,2',' 4f14','824 C','1466 C');">Yb</a>
+        </td>
+        <td width="30" height="16" align="center">
+          <a href="javascript: fillitin('Lutetium','71','174.96','2,8,18,32,9,2',' 4f14','1656 C','3315 C');">Lu</a>
+        </td>
+        <td width="30" height="8" rowspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="29" height="15" align="center">
+          <a href="javascript: fillitin('Thorium','90','232.0381','2,8,18,32,18,10,2',' 6d2','1750 C','4790 C');">Th</a>
+        </td>
+        <td width="29" height="15" align="center">
+          <a
+            href="javascript: fillitin('Proactinium','91','231.0359','2,8,18,32,20,9,2',' 5f2','1600 C','N/A C');">Pa</a>
+        </td>
+        <td width="29" height="15" align="center">
+          <a href="javascript: fillitin('Uranium','92','238.029','2,8,18,32,21,9,2',' 5f3','1132 C','3818 C');">U</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a href="javascript: fillitin('Neptunium','93','237.0482','2,8,18,32,23,8,2',' 5f4','640 C','3902 C');">Np</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a
+            href="javascript: fillitin('Plutonium','94','(244)','2,8,18,32,24,8,2',' 5f6','639.5? C','3235?9 C');">Pu</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a href="javascript: fillitin('Americium','95','(243)','2,8,18,32,25,8,2',' 5f7','994 C','2607 C');">Am</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a href="javascript: fillitin('Curium','96','(247)','2,8,18,32,25,9,2',' 5f7','1340 C','N/A C');">Cm</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a href="javascript: fillitin('Berkelium','97','(247)','2,8,18,32,26,9,2',' 5f8','N/A C','N/A C');">Bk</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="29" height="15" align="center">
+          <a href="javascript: fillitin('Californium','98','(251)','2,8,18,32,28,8,2',' 5f9','N/A C','N/A C');">Cf</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="30" height="15" align="center">
+          <a href="javascript: fillitin('Einsteinium','99','(254)','2,8,18,32,29,8,2',' 5f11','N/A C','N/A C');">Es</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="30" height="15" align="center">
+          <a href="javascript: fillitin('Fremium','100','(257)','2,8,18,32,30,8,2',' 5f12','N/A C','N/A C');">Fm</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="30" height="15" align="center">
+          <a href="javascript: fillitin('Mendelevium','101','(258)','2,8,18,32,31,8,2',' 5f13','N/A C','N/A C');">Md</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="30" height="15" align="center">
+          <a href="javascript: fillitin('Nobelium','102','(259)','2,8,18,32,32,8,2',' 5f14','N/A C','N/A C');">No</a>
+        </td>
+        <td bgcolor="#DDDDDD" width="30" height="15" align="center">
+          <a href="javascript: fillitin('Lawrencium','103','(260)','2,8,18,32,32,9,2',' 5f14','N/A C','N/A C');">Lr</a>
+        </td>
+      </tr>
+    </table>
+  </d-card-content>
+  <d-card-actions [align]="'spaceBetween'">
+  </d-card-actions>
+</d-card>

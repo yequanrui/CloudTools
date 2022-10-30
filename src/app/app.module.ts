@@ -8,10 +8,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LayoutModule, SplitterModule } from 'ng-devui';
 import { DEVUI_LANG, I18nService, ZH_CN } from 'ng-devui/i18n';
 import { DevUIGlobalConfig, DevUIGlobalConfigToken } from 'ng-devui/utils';
+import { HeaderModule } from '@common/header/header.module';
+import { FooterModule } from '@common/footer/footer.module';
+import { MenuModule } from '@common/menu/menu.module';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderModule } from './header/header.module';
-import { FooterModule } from './footer/footer.module';
-import { MenuModule } from './menu/menu.module';
 import { AppComponent } from './app.component';
 
 export function HttpLoaderFactory(http: HttpClient) {

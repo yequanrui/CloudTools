@@ -5,7 +5,7 @@
     </d-header>
     <d-layout>
       <d-aside>
-        <d-splitter [orientation]="'horizontal'" [style.width]="collapsed?0:undefined">
+        <d-splitter orientation="horizontal" [style.width]="collapsed?0:undefined">
           <d-splitter-pane size="100%" [collapsible]="true" [collapsed]="collapsed"
             (collapsedChange)="collapsed=$event">
             <app-menu></app-menu>

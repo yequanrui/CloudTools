@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  appName: 'CloudTools',
+  production: true,
 };

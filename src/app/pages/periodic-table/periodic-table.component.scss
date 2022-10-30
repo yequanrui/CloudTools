@@ -1,0 +1,13 @@
+@import '../../devui';
+
+.periodic-table {
+  max-width: 540px;
+  margin: 0 auto;
+  .periodic-cell {
+    text-align: center;
+    cursor: pointer;
+    &.gas {
+      background-color: $devui-success;
+    }
+  }
+}

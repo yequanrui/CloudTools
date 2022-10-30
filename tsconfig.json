@@ -23,9 +23,12 @@
     "lib": ["es2020", "dom"],
     "paths": {
       "@environment/*": ["src/environments/*"],
+      "@common/*": ["src/app/common/*"],
+      "@pages/*": ["src/app/pages/*"],
       "@shared": ["src/app/shared/shared.module"],
       "@components/*": ["src/app/shared/components/*"],
       "@data/*": ["src/app/shared/data/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
       "@services/*": ["src/app/shared/services/*"]
     }
   },

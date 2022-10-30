@@ -28,7 +28,12 @@
     "nowcoderTest": "Nowcoder Test",
     "office": "Office",
     "acousticCalc": "Acoustic Calculator",
-    "qrCode": "QRCode Generator"
+    "qrCode": "QRCode Generator",
+    "study": "Study",
+    "periodicTable": "Periodic Table of Elements",
+    "entertainment": "Entertainment",
+    "2048": "2048",
+    "sheep": "Sheep"
   },
   "repoAxis": {
     "archived": "Archived"
@@ -38,5 +43,8 @@
     "placeholder": "Enter or paste text",
     "generate": "Generate",
     "generating": "Generating..."
+  },
+  "periodicTable": {
+    "remark": "Click to view periodic detail"
   }
 }

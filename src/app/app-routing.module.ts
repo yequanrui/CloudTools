@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./content/content.module').then((m) => m.ContentModule) },
-  { path: 'RepoAxis', loadChildren: () => import('./repo-axis/repo-axis.module').then((m) => m.RepoAxisModule) },
-  { path: 'Transcoding', loadChildren: () => import('./transcoding/transcoding.module').then((m) => m.TranscodingModule) },
-  { path: 'JsEquality', loadChildren: () => import('./js-equality/js-equality.module').then((m) => m.JsEqualityModule) },
-  { path: 'NowcoderTest', loadChildren: () => import('./nowcoder-test/nowcoder-test.module').then((m) => m.NowcoderTestModule) },
-  { path: 'AcousticCalc', loadChildren: () => import('./acoustic-calc/acoustic-calc.module').then((m) => m.AcousticCalcModule) },
-  { path: 'QRCode', loadChildren: () => import('./qr-code/qr-code.module').then(m => m.QrCodeModule) },
+  { path: 'home', loadChildren: () => import('@common/content/content.module').then((m) => m.ContentModule) },
+  { path: 'repo-axis', loadChildren: () => import('@pages/repo-axis/repo-axis.module').then((m) => m.RepoAxisModule) },
+  { path: 'transcoding', loadChildren: () => import('@pages/transcoding/transcoding.module').then((m) => m.TranscodingModule) },
+  { path: 'js-equality', loadChildren: () => import('@pages/js-equality/js-equality.module').then((m) => m.JsEqualityModule) },
+  { path: 'nowcoder-test', loadChildren: () => import('@pages/nowcoder-test/nowcoder-test.module').then((m) => m.NowcoderTestModule) },
+  { path: 'acoustic-calc', loadChildren: () => import('@pages/acoustic-calc/acoustic-calc.module').then((m) => m.AcousticCalcModule) },
+  { path: 'qr-code', loadChildren: () => import('@pages/qr-code/qr-code.module').then((m) => m.QrCodeModule) },
+  { path: 'periodic-table', loadChildren: () => import('@pages/periodic-table/periodic-table.module').then((m) => m.PeriodicTableModule) },
+  { path: 'puzzle-2048', loadChildren: () => import('./pages/puzzle-2048/puzzle-2048.module').then((m) => m.Puzzle2048Module) },
 ];
 
 @NgModule({

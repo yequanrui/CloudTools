@@ -10,5 +10,10 @@ export interface IRepo {
   disabled: boolean;
 }
 
+export enum Pages {
+  GitHub = 'https://yequanrui.github.io',
+  Gitee = 'https://yequanrui.gitee.io',
+}
+
 export const CLIENT_ID = '6e717bdff804f697ed48';
 export const CLIENT_SECRETS = '82bb036ac17f3bb9b82179cbaf57c7d7760b86c2';
