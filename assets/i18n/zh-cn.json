@@ -20,6 +20,7 @@
     "galaxy": "追光"
   },
   "menu": {
+    "2048": "2048",
     "management": "记录管理",
     "repoAxis": "仓库时间轴",
     "development": "编程开发",
@@ -32,8 +33,7 @@
     "study": "教育学习",
     "periodicTable": "元素周期表",
     "entertainment": "休闲娱乐",
-    "2048": "2048",
-    "sheep": "羊了个羊"
+    "match3": "三消"
   },
   "repoAxis": {
     "archived": "归档"
@@ -46,5 +46,6 @@
   },
   "periodicTable": {
     "remark": "点击查看元素详情"
-  }
+  },
+  "jump": "跳转"
 }
