@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SearchModule } from 'ng-devui';
+import { DCommonModule, SearchModule } from 'ng-devui';
 import { SharedModule } from '@shared';
 import { GithubBtnModule } from '@components/github-btn';
 import { LanguageSwitchModule } from './language-switch/language-switch.module';
@@ -7,7 +7,7 @@ import { ThemePickerModule } from './theme-picker/theme-picker.module';
 import { HeaderComponent } from './header.component';
 
 @NgModule({
-  imports: [SearchModule, SharedModule, GithubBtnModule, LanguageSwitchModule, ThemePickerModule],
+  imports: [DCommonModule, SearchModule, SharedModule, GithubBtnModule, LanguageSwitchModule, ThemePickerModule],
   exports: [HeaderComponent],
   declarations: [HeaderComponent],
 })

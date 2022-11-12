@@ -23,6 +23,18 @@
   }
   .header-right {
     @include flex(flex-end);
+    .devui-logo {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      i {
+        background: url(../../../assets/img/devui.svg);
+        width: 24px;
+        height: 24px;
+        display: block;
+        cursor: pointer;
+      }
+    }
     .header-repo {
       margin: 0 12px;
     }

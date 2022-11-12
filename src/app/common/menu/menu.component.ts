@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
           title: this.translate.instant('menu.entertainment'),
           children: [
             { title: this.translate.instant('menu.2048'), link: '/puzzle-2048', linkType: 'routerLink' },
-            { title: this.translate.instant('menu.sheep'), link: '/match-3', linkType: 'routerLink' },
+            { title: this.translate.instant('menu.match3'), link: '/match-3', linkType: 'routerLink' },
           ],
         },
       ];

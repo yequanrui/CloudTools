@@ -33,7 +33,7 @@
     "periodicTable": "Periodic Table of Elements",
     "entertainment": "Entertainment",
     "2048": "2048",
-    "sheep": "Sheep"
+    "match3": "Match 3"
   },
   "repoAxis": {
     "archived": "Archived"
@@ -46,5 +46,6 @@
   },
   "periodicTable": {
     "remark": "Click to view periodic detail"
-  }
+  },
+  "jump": "Jump"
 }

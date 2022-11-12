@@ -12,6 +12,7 @@
 > 6. [QRCode Generator -- 二维码生成器](https://yequanrui.github.io/CloudTools/qr-code)
 > 7. [Periodic Table of Elements -- 元素周期表](https://yequanrui.github.io/CloudTools/periodic-table)
 > 8. [2048](https://yequanrui.github.io/CloudTools/puzzle-2048)
+> 9. [Match 3 -- 三消](https://yequanrui.github.io/CloudTools/match-3)
 
 [![version](https://img.shields.io/github/package-json/v/yequanrui/CloudTools)](https://yequanrui.github.io/CloudTools/)
 [![types](https://img.shields.io/npm/types/@angular/core)](https://www.tslang.cn/)

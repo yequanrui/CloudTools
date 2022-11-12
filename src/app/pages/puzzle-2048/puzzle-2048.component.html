@@ -1,1 +1,15 @@
-<embed [src]="uri|safeUrl" width="100%" height="100%">
+<ng-container *ngFor="let card of cardList">
+  <d-card class="card-container" [interactive]="true">
+    <d-card-header>
+      <d-avatar dCardAvatar [imgSrc]="card.icon" [width]="60" [height]="60" [isRound]="false"></d-avatar>
+      <d-card-title>{{card.name}}</d-card-title>
+      <d-card-subtitle><i class="card-icon icon-op-member"></i><span>{{card.author}}</span></d-card-subtitle>
+    </d-card-header>
+    <d-card-content>{{card.desc}}</d-card-content>
+    <d-card-actions [align]="'end'">
+      <div class="card-block" (click)="goTo(card.url)">
+        <i class="card-icon icon-link"></i><span>{{'jump'|translate}}</span>
+      </div>
+    </d-card-actions>
+  </d-card>
+</ng-container>
