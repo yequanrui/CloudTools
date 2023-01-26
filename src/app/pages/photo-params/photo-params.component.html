@@ -1,0 +1,29 @@
+<d-row [dFlex]="1" [dFlexContainer]="'column'" [dAlign]="'stretch'" [dGutter]="[0,8]" [dStyle]="{'height':'100%'}">
+  <d-col>
+    <d-alert type="info" [closeable]="false" [showIcon]="false">
+      {{'menu.photoParams'|translate}}
+    </d-alert>
+  </d-col>
+  <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
+    <d-data-table [dataSource]="photoParams" [scrollable]="true" [tableWidthConfig]="tableWidthConfig"
+      [tableOverflowType]="'overlay'">
+      <thead dTableHead>
+        <tr dTableRow>
+          <th dHeadCell>#</th>
+          <th dHeadCell *ngFor="let colOption of dataTableOptions.columns">{{ colOption.header }}</th>
+        </tr>
+      </thead>
+      <tbody dTableBody>
+        <ng-template let-rowItem="rowItem" let-rowIndex="rowIndex">
+          <tr dTableRow>
+            <td dTableCell>{{ rowIndex + 1 }}</td>
+            <td dTableCell *ngFor="let colOption of dataTableOptions.columns">
+              {{ colOption.fieldType === 'date' ? (rowItem[colOption.field]) :
+              rowItem[colOption.field] }}
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </d-data-table>
+  </d-col>
+</d-row>

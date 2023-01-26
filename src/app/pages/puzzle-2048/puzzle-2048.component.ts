@@ -7,6 +7,8 @@ import { HelperUtils } from 'ng-devui';
   styleUrls: ['./puzzle-2048.component.scss'],
 })
 export class Puzzle2048Component {
+  activeTab: string | number;
+  uri = '/MyWebCollection/2048/';
   cardList = [
     {
       name: 'My 2048',
@@ -38,7 +40,10 @@ export class Puzzle2048Component {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    const origin = location.hostname.includes('localhost') ? `//${location.hostname}:8080/Web` : location.origin;
+    this.uri = origin + this.uri;
+  }
 
   goTo(url: string) {
     url && HelperUtils.jumpOuterUrl(url);

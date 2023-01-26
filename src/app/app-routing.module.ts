@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'transcoding', loadChildren: () => import('@pages/transcoding/transcoding.module').then((m) => m.TranscodingModule) },
   { path: 'js-equality', loadChildren: () => import('@pages/js-equality/js-equality.module').then((m) => m.JsEqualityModule) },
   { path: 'nowcoder-test', loadChildren: () => import('@pages/nowcoder-test/nowcoder-test.module').then((m) => m.NowcoderTestModule) },
+  { path: 'photo-params', loadChildren: () => import('./pages/photo-params/photo-params.module').then((m) => m.PhotoParamsModule) },
   { path: 'acoustic-calc', loadChildren: () => import('@pages/acoustic-calc/acoustic-calc.module').then((m) => m.AcousticCalcModule) },
   { path: 'qr-code', loadChildren: () => import('@pages/qr-code/qr-code.module').then((m) => m.QrCodeModule) },
   { path: 'periodic-table', loadChildren: () => import('@pages/periodic-table/periodic-table.module').then((m) => m.PeriodicTableModule) },

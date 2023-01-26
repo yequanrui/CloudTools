@@ -13,7 +13,8 @@ export class MenuComponent implements OnInit {
   constructor(private translate: TranslateService) {}
 
   ngOnInit() {
-    this.translate.onLangChange.subscribe((params) => {
+    const isLocal = location.hostname.includes('localhost');
+    this.translate.onLangChange.subscribe(() => {
       this.menu = [
         {
           title: this.translate.instant('menu.management'),
@@ -23,8 +24,14 @@ export class MenuComponent implements OnInit {
           title: this.translate.instant('menu.development'),
           children: [
             { title: this.translate.instant('menu.transcoding'), link: '/transcoding', linkType: 'routerLink' },
-            { title: this.translate.instant('menu.jsEquality'), link: '/js-equality', linkType: 'routerLink' },
+            { title: this.translate.instant('menu.jsEquality'), link: '/js-equality', linkType: 'routerLink', disabled: !isLocal },
             { title: this.translate.instant('menu.nowcoderTest'), link: '/nowcoder-test', linkType: 'routerLink' },
+          ],
+        },
+        {
+          title: this.translate.instant('menu.graphics'),
+          children: [
+            { title: this.translate.instant('menu.photoParams'), link: '/photo-params', linkType: 'routerLink', disabled: !isLocal },
           ],
         },
         {
@@ -47,9 +54,5 @@ export class MenuComponent implements OnInit {
         },
       ];
     });
-  }
-
-  activeItemChange(event: any) {
-    console.log(event);
   }
 }

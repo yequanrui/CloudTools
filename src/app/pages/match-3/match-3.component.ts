@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Pages } from '@data/repo';
 
 @Component({
   selector: 'match-3',
@@ -7,7 +6,7 @@ import { Pages } from '@data/repo';
   styleUrls: [],
 })
 export class Match3Component {
-  uri = '/MyWebCollection/sheep/';
+  uri = '/MyWebCollection/match-3/';
 
   constructor() {
     const origin = location.hostname.includes('localhost') ? `//${location.hostname}:8080/Web` : location.origin;

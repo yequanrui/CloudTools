@@ -1,26 +1,31 @@
 @import '../../devui';
 
-:host {
+.puzzle-type {
+  height: 0;
+  float: left;
+}
+
+.card-container {
+  margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-content: center;
   justify-content: center;
-}
-
-.card-container {
-  width: 320px;
-  margin: 8px;
-  .card-icon {
-    cursor: pointer;
-    font-size: $devui-font-size-icon;
-    margin-right: 8px;
-    vertical-align: middle;
-    & + span {
+  .card-content {
+    width: 320px;
+    margin: 8px;
+    .card-icon {
+      cursor: pointer;
+      font-size: $devui-font-size-icon;
+      margin-right: 8px;
       vertical-align: middle;
+      & + span {
+        vertical-align: middle;
+      }
     }
-  }
-  .card-block {
-    margin-right: 16px;
+    .card-block {
+      margin-right: 16px;
+    }
   }
 }
