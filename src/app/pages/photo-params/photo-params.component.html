@@ -4,9 +4,10 @@
       {{'menu.photoParams'|translate}}
     </d-alert>
   </d-col>
-  <d-col [dFlexContainer]="'row'" [dJustify]="'between'">
-    <d-data-table [dataSource]="photoParams" [scrollable]="true" [tableWidthConfig]="tableWidthConfig"
-      [tableOverflowType]="'overlay'">
+  <d-col dFlexContainer="row" dJustify="center">
+    <d-data-table tableLayout="fixed" tableOverflowType="overlay" shadowType="embed" [containFixHeaderHeight]="true"
+      [fixHeader]="true" [resizeable]="true" [scrollable]="true" [dataSource]="photoParams"
+      [tableWidthConfig]="tableWidthConfig">
       <thead dTableHead>
         <tr dTableRow>
           <th dHeadCell>#</th>
