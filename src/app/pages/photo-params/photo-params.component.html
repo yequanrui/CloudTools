@@ -10,17 +10,19 @@
       [tableWidthConfig]="tableWidthConfig">
       <thead dTableHead>
         <tr dTableRow>
-          <th dHeadCell>#</th>
-          <th dHeadCell *ngFor="let colOption of dataTableOptions.columns">{{ colOption.header }}</th>
+          <th dHeadCell *ngFor="let col of columnOptions">{{ col.header }}</th>
         </tr>
       </thead>
       <tbody dTableBody>
         <ng-template let-rowItem="rowItem" let-rowIndex="rowIndex">
           <tr dTableRow>
-            <td dTableCell>{{ rowIndex + 1 }}</td>
-            <td dTableCell *ngFor="let colOption of dataTableOptions.columns">
-              {{ colOption.fieldType === 'date' ? (rowItem[colOption.field]) :
-              rowItem[colOption.field] }}
+            <td dTableCell *ngFor="let col of columnOptions">
+              <div [ngSwitch]="col.field">
+                <div *ngSwitchCase="'exposureValue'">{{ rowItem[col.field]||'0' }}</div>
+                <div *ngSwitchCase="'shutterSpeed'">{{ rowItem[col.field]|addUnit:'s' }}</div>
+                <div *ngSwitchCase="'whiteBalance'">{{ rowItem[col.field]|addUnit:'K' }}</div>
+                <div *ngSwitchDefault>{{ rowItem[col.field] }}</div>
+              </div>
             </td>
           </tr>
         </ng-template>

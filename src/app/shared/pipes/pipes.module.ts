@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { AddUnitPipe } from './add-unit.pipe';
 import { SafeUrlPipe } from './safe-url.pipe';
 
 @NgModule({
-  declarations: [SafeUrlPipe],
+  declarations: [AddUnitPipe, SafeUrlPipe],
   imports: [],
-  exports: [SafeUrlPipe],
+  exports: [AddUnitPipe, SafeUrlPipe],
 })
 export class PipesModule {}

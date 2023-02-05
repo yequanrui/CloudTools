@@ -1,7 +1,4 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '@shared';
-import { NowcoderTestRoutingModule } from './nowcoder-test-routing.module';
-import { NowcoderTestComponent } from './nowcoder-test.component';
 import {
   AlertModule,
   ButtonModule,
@@ -12,6 +9,9 @@ import {
   TextareaModule,
   TextInputModule,
 } from 'ng-devui';
+import { SharedModule } from '@shared';
+import { NowcoderTestRoutingModule } from './nowcoder-test-routing.module';
+import { NowcoderTestComponent } from './nowcoder-test.component';
 
 @NgModule({
   imports: [

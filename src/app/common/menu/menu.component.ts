@@ -30,9 +30,7 @@ export class MenuComponent implements OnInit {
         },
         {
           title: this.translate.instant('menu.graphics'),
-          children: [
-            { title: this.translate.instant('menu.photoParams'), link: '/photo-params', linkType: 'routerLink', disabled: !isLocal },
-          ],
+          children: [{ title: this.translate.instant('menu.photoParams'), link: '/photo-params', linkType: 'routerLink' }],
         },
         {
           title: this.translate.instant('menu.office'),
