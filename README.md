@@ -24,7 +24,7 @@
 [![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](http://angular.cn/)
 [![devui](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/ng-devui)](https://devui.design/home)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.x.x.
 
 ## Development server
 
