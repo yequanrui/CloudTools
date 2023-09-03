@@ -32,7 +32,7 @@
         <section>
           <div class="title">{{'themePicker.mode'|translate}}</div>
           <div class="content">
-            <d-radio-group class="theme-select-radio" [(ngModel)]="themeMode" [ngModelOptions]="{standalone:true}"
+            <d-radio-group class="theme-select-radio" [(ngModel)]="themeMode" [ngModelOptions]="{standalone: true}"
               (change)="themesChange()">
               <d-radio [value]="'light'" [disabled]="themePrefersColorScheme">
                 {{'themePicker.light'|translate}}
@@ -58,7 +58,7 @@
         <div style="width:180px;margin:0 auto">
           <div *ngFor="let item of advancedThemeList" class="extend-theme-image"
             [style.background-image]="'url('+item.url+')'" (click)="advancedThemeChange(item.value)">
-            <span class="extend-theme-title" [style.color]="item.value==='infinity'?'#252b3a':null">
+            <span class="extend-theme-title" [style.color]="item.value==='infinity' ? '#252b3a' : null">
               {{'themePicker.'+item.value|translate}}
             </span>
             <i *ngIf="currentAdvancedTheme===item.value" class="icon-right active-theme"></i>

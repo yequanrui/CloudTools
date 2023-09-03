@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EN_US, I18nService, I18nUtil, ZH_CN } from 'ng-devui/i18n';
-import { Broadcast } from '@data/broadcast';
+import { Broadcast } from 'src/app/shared/datas/broadcast';
 import { BroadcastService } from '@services/broadcast.service';
 
 @Component({

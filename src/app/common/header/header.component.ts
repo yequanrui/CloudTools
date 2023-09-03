@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '@environment/environment';
+import { Env } from '@datas/env';
+import { ImgService } from '@services/img.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,8 @@ import { environment } from '@environment/environment';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  appName = environment.appName;
+  appName = Env.AppName;
+  IMG = ImgService.imgList;
 
   constructor() {}
 

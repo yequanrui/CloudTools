@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError, map, Observable, of } from 'rxjs';
-import { GITHUB_API, Method } from '@data/api';
-import { CLIENT_ID, CLIENT_SECRETS, IRepo } from '@data/repo';
+import { GITHUB_API, Method } from 'src/app/shared/datas/api';
+import { CLIENT_ID, CLIENT_SECRETS, IRepo } from 'src/app/shared/datas/repo';
 import { UtilService } from './util.service';
 
 @Injectable({

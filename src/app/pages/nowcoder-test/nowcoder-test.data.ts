@@ -1,4 +1,4 @@
-import { ITest } from '@data/test';
+import { ITest } from 'src/app/shared/datas/test';
 
 const template = `function func(line) {
   // TODO

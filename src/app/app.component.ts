@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { ImgService } from '@services/img.service';
 import { EN_US, I18nUtil, ZH_CN } from 'ng-devui/i18n';
 import { DevConfigService } from 'ng-devui/utils';
 
@@ -12,7 +13,12 @@ import { DevConfigService } from 'ng-devui/utils';
 export class AppComponent implements OnInit {
   collapsed = true;
 
-  constructor(private router: Router, private translate: TranslateService, private devConfigService: DevConfigService) {
+  constructor(
+    private router: Router,
+    private translate: TranslateService,
+    private devConfigService: DevConfigService,
+    private imgService: ImgService
+  ) {
     this.translate.addLangs([ZH_CN, EN_US]);
     const currentLang = I18nUtil.getCurrentLanguage() || ZH_CN;
     this.translate.setDefaultLang(currentLang);
@@ -30,6 +36,7 @@ export class AppComponent implements OnInit {
       }
       oldHandler(err);
     };
+    this.imgService.init();
   }
 
   ngOnInit() {

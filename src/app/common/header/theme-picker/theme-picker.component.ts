@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Theme, ThemeService, ThemeServiceFollowSystemOff, ThemeServiceFollowSystemOn } from 'ng-devui/theme';
 import { Subscription } from 'rxjs';
+import { Broadcast } from '@datas/broadcast';
+import { BroadcastService } from '@services/broadcast.service';
 import { LargeFontSize } from './theme-data-more';
 import { themePickerImg } from './theme-picker-img';
 
@@ -10,7 +12,7 @@ import { themePickerImg } from './theme-picker-img';
   styleUrls: ['./theme-picker.component.scss'],
 })
 export class ThemePickerComponent implements OnInit, OnDestroy {
-  sub: Subscription;
+  sub: Subscription = new Subscription();
   themeService!: ThemeService;
   themes: Theme[] = [];
   theme: string = 'devui-light-theme';
@@ -29,7 +31,7 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
   ];
   currentAdvancedTheme = 'infinity';
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private broadcast: BroadcastService) {}
 
   ngOnInit() {
     if (typeof window !== 'undefined') {
@@ -80,6 +82,11 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
     this.themePrefersColorScheme ? this.themePrefersColorSchemeChange(true) : this.themesChange();
   }
 
+  themeChange(theme: Theme) {
+    this.themeService.applyTheme(theme);
+    this.broadcast.send(Broadcast.ThemeChange, theme);
+  }
+
   themesChange() {
     if (this.largeFontSizeMode) {
       this.largeFontTheme.data = { ...this.themes[`${this.themePrefix}-${this.themeMode}-theme`].data, ...LargeFontSize };
@@ -87,13 +94,13 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
     } else {
       this.theme = `${this.themePrefix}-${this.themeMode}-theme`;
     }
-    this.themeService.applyTheme(this.themes[this.theme]);
+    this.themeChange(this.themes[this.theme]);
   }
 
   advancedThemeChange(theme: string) {
     this.currentAdvancedTheme = theme;
     const validTheme = `${theme}-theme`;
-    this.themeService.applyTheme(this.themes[validTheme]);
+    this.themeChange(this.themes[validTheme]);
   }
 
   themeFontSizeChange() {
@@ -103,7 +110,7 @@ export class ThemePickerComponent implements OnInit, OnDestroy {
     } else {
       this.theme = `${this.themePrefix}-${this.themeMode}-theme`;
     }
-    this.themeService.applyTheme(this.themes[this.theme]);
+    this.themeChange(this.themes[this.theme]);
   }
 
   themeFontSizeSchemeChange(event: boolean) {

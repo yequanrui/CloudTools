@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IDemo, IDiff, ITest } from '@data/test';
+import { IDemo, IDiff, ITest } from 'src/app/shared/datas/test';
 import { HelperUtils } from 'ng-devui';
 import { template, tests } from './nowcoder-test.data';
 

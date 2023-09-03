@@ -19,20 +19,22 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
-    "typeRoots": ["node_modules/@types"],
-    "module": "es2020",
-    "lib": ["es2020", "dom"],
+    "target": "ES2022",
+    "typeRoots": ["src/@types", "node_modules/@types"],
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": ["ES2022", "dom"],
     "paths": {
       "@environment/*": ["src/environments/*"],
       "@common/*": ["src/app/common/*"],
       "@pages/*": ["src/app/pages/*"],
       "@shared": ["src/app/shared/shared.module"],
       "@components/*": ["src/app/shared/components/*"],
-      "@data/*": ["src/app/shared/data/*"],
+      "@datas/*": ["src/app/shared/datas/*"],
       "@pipes/*": ["src/app/shared/pipes/*"],
       "@services/*": ["src/app/shared/services/*"],
-      "@utils/*": ["src/app/shared/utils/*"]
+      "@utils/*": ["src/app/shared/utils/*"],
+      "@imgs/*": ["src/assets/img/*"]
     }
   },
   "angularCompilerOptions": {
@@ -41,5 +43,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*"],
+  "exclude": ["**/*.spec.ts"]
 }
