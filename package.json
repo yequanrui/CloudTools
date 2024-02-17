@@ -10,7 +10,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --deploy-url /CloudTools/",
+    "build": "ng build --base-href /CloudTools/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
