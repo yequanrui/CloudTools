@@ -22,7 +22,7 @@ jobs:
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
-          echo "name=dir::$(npm config get cache)" >> $GITHUB_OUTPUT
+          echo "name=dir::$(pnpm config get cache)" >> $GITHUB_OUTPUT
       # Cache node_modules
       - name: Cache node_modules
         uses: actions/cache@v4
@@ -34,12 +34,12 @@ jobs:
             ${{ runner.os }}-node-
       # Install required dependencies to build app
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm ci
       # Use angular-cli-ghpages to deploy app
       - name: Deploy to Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+        run: pnpm deploy
       - name: Github Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
