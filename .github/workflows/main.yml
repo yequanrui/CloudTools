@@ -26,7 +26,7 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
       - name: Build Artifacts
-        run: pnpm run build
+        run: pnpm build
       # Use angular-cli-ghpages to deploy app
       - name: Deploy to Github Pages
         env:
