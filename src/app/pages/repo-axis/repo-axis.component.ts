@@ -29,7 +29,7 @@ export class RepoAxisComponent implements OnInit {
       return;
     }
     this.showLoading = true;
-    this.apiService.getRepos(userName).subscribe({
+    this.apiService.getReposByUser(userName).subscribe({
       next: (res) =>
         (this.repoAxisTemplate.list = res
           ? res.map((repo, index) => {

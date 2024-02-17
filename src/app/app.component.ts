@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ImgService } from '@services/img.service';
-import { EN_US, I18nUtil, ZH_CN } from 'ng-devui/i18n';
+import { ZH_CN, EN_US, I18nUtil } from 'ng-devui/i18n';
 import { DevConfigService } from 'ng-devui/utils';
 
 @Component({

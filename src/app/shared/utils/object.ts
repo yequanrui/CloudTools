@@ -1,7 +1,13 @@
 /**
+ * 判断对象是否为空
+ * @param obj 要判断的对象
+ */
+const isEmpty = (obj: object) => Reflect.ownKeys(obj).length === 0;
+
+/**
  * 浅克隆对象
- * @param str 要反转的字符串
- * @returns 反转后的字符串
+ * @param obj 要克隆的对象
+ * @returns 克隆后的对象
  */
 const cloneObject = (obj: object) => Object.assign({}, obj);
 

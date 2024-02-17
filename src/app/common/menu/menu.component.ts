@@ -40,6 +40,10 @@ export class MenuComponent implements OnInit {
           ],
         },
         {
+          title: this.translate.instant('menu.daily'),
+          children: [{ title: this.translate.instant('menu.calendar'), link: '/calendar', linkType: 'routerLink' }],
+        },
+        {
           title: this.translate.instant('menu.study'),
           children: [{ title: this.translate.instant('menu.periodicTable'), link: '/periodic-table', linkType: 'routerLink' }],
         },

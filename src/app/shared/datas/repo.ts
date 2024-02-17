@@ -15,5 +15,6 @@ export enum Pages {
   Gitee = 'https://yequanrui.gitee.io',
 }
 
+export const GITHUB_API = 'https://api.github.com';
 export const CLIENT_ID = '6e717bdff804f697ed48';
 export const CLIENT_SECRETS = '82bb036ac17f3bb9b82179cbaf57c7d7760b86c2';

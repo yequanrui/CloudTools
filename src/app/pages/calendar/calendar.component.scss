@@ -1,0 +1,41 @@
+@import '../../devui';
+
+.cal-header {
+  background-color: $devui-primary-bg;
+  border: 1px solid $devui-primary-line;
+  border-radius: $devui-border-radius-card $devui-border-radius-card 0 0;
+  margin-top: 10px;
+  line-height: 70px;
+  .cal-title {
+    font-size: $devui-font-size-data-overview;
+    text-align: center;
+  }
+  .date-picker {
+    line-height: $devui-line-height-base;
+  }
+}
+
+.cal-body {
+  background-color: $devui-default-bg;
+  border: 1px solid $devui-default-line;
+  border-top-color: transparent;
+  border-radius: 0 0 $devui-border-radius-card $devui-border-radius-card;
+}
+
+:host ::ng-deep .devui-tag-item.tag-custom {
+  color: $devui-light-text;
+  box-sizing: border-box;
+  &.green {
+    background-color: $devui-success;
+  }
+  &.red {
+    background-color: $devui-danger;
+  }
+}
+
+.date-custom {
+  text-align: right;
+  d-button {
+    margin-left: 8px;
+  }
+}

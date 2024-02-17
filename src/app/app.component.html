@@ -6,8 +6,13 @@
     <d-layout>
       <d-aside>
         <d-splitter orientation="horizontal" [style.width]="collapsed ? 0 : undefined">
-          <d-splitter-pane size="100%" minSize="125px" [collapsible]="true" [(collapsed)]="collapsed"
-            (collapsedChange)="collapsed=$event">
+          <d-splitter-pane
+            size="100%"
+            minSize="125px"
+            [collapsible]="true"
+            [(collapsed)]="collapsed"
+            (collapsedChange)="collapsed = $event"
+          >
             <app-menu></app-menu>
           </d-splitter-pane>
           <d-splitter-pane size="0"></d-splitter-pane>

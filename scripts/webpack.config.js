@@ -2,7 +2,7 @@ const path = require('path');
 
 let config = {
   output: {
-    path: path.resolve(__dirname, 'dist'), // 打包后文件的输出路径
+    path: path.resolve(__dirname, '../dist'), // 打包后文件的输出路径
     clean: true, // 清理打包后上次遗留的js和html文件
   },
   resolve: {

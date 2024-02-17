@@ -1,0 +1,62 @@
+<d-row class="cal-header">
+  <d-col [dSpan]="3" class="cal-title">万年历</d-col>
+  <d-col [dFlex]="1">
+    <d-datepicker-pro #datepicker class="date-picker" [appendToBody]="false" [format]="format.default"
+      [(ngModel)]="date" (ngModelChange)="onChange($event)">
+      <ng-template #footerTemplate>
+        <div class="date-custom">
+          <d-button bsStyle="primary" (click)="setToday()">今天</d-button>
+          <d-button bsStyle="common" (click)="clear()">清除时间</d-button>
+        </div>
+      </ng-template>
+    </d-datepicker-pro>
+  </d-col>
+  <d-col [dSpan]="6">北京时间：00:00:00</d-col>
+</d-row>
+<d-row class="cal-body">
+  <d-col [dFlex]="1">
+    <d-row>
+      <d-col>日历显示</d-col>
+    </d-row>
+    <d-row>
+      <d-col>日历提示</d-col>
+    </d-row>
+  </d-col>
+  <d-col [dSpan]="6">
+    <d-row>
+      <d-col>
+        时间：2023/10/04 16:52:58
+        <br>
+        农历：{{calendar?.yearTips}} {{calendar?.lunarCalendar}}
+        <br>
+        星座：{{calendar?.constellation}}
+        <br>
+        类型：{{calendar?.typeDes}}
+        <br>
+        天次：今年的第{{calendar?.dayOfYear}}天
+        <br>
+        周次：今年的第{{calendar?.weekOfYear}}周
+        <br>
+        节气：{{calendar?.solarTerms}}
+      </d-col>
+    </d-row>
+    <d-row>
+      <d-col>
+        今日黄历
+        <br>
+        <d-tag labelStyle="tag-custom green" tag="宜" titleContent="宜事项"></d-tag>
+        {{calendar?.suit||'无'}}
+        <br>
+        <d-tag labelStyle="tag-custom red" tag="忌" titleContent="忌事项"></d-tag>
+        {{calendar?.avoid||'无'}}
+      </d-col>
+    </d-row>
+    <d-row>
+      <d-col>历史上的今天</d-col>
+      <div *ngFor="let his of histories?.slice(0,3)">
+        <a dPopover [appendToBody]="true" [controlled]="!!his.details" trigger="hover"
+          [content]="his.details">{{his.title}}</a>
+      </div>
+    </d-row>
+  </d-col>
+</d-row>
