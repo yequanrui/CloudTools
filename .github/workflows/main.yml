@@ -18,7 +18,6 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           version: 8
-      # Install Node.js
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
@@ -32,7 +31,7 @@ jobs:
       - name: Deploy to Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm deploy
+        run: npx angular-cli-ghpages --dir=dist/CloudTools --repo=https://github.com/yequanrui/CloudTools.git --name="yequanrui" --email=yequanrui@qq.com
       - name: Github Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
