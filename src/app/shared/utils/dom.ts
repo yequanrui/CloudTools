@@ -16,6 +16,47 @@ const smoothScroll = (el: string) => document.querySelector(el).scrollIntoView({
  */
 const fullscreen = (toggle = true, el = 'body') => (toggle ? document.querySelector(el).requestFullscreen() : document.exitFullscreen());
 
+// 进入全屏
+const enterFullScreen = (el: any) => {
+  if (el.requestFullscreen) {
+    el.requestFullscreen();
+  } else if (el.mozRequestFullScreen) {
+    el.mozRequestFullScreen();
+  } else if (el.webkitRequestFullscreen) {
+    el.webkitRequestFullscreen();
+  } else if (el.msRequestFullscreen) {
+    el.msRequestFullscreen();
+  }
+};
+
+// 退出全屏
+const exitFullscreen = () => {
+  const el: any = document.documentElement;
+  if (document.exitFullscreen) {
+    el.exitFullscreen();
+  } else if (el.webkitExitFullscreen) {
+    el.webkitExitFullscreen();
+  } else if (el.mozCancelFullScreen) {
+    el.mozCancelFullScreen();
+  } else if (el.msExitFullscreen) {
+    el.msExitFullscreen();
+  }
+};
+
+// 当前处于全屏的元素
+const fullscreenElement = () => {
+  const el: any = document.documentElement;
+  return el.fullscreenElement || el.webkitFullscreenElement || el.mozFullScreenElement || el.msFullscreenElement || null;
+};
+
+// 是否处于全屏
+const isFullscreen = () => !!fullscreenElement();
+
+// 切换全屏
+const toggleFullScreen = (el: any) => {
+  isFullscreen() ? exitFullscreen() : enterFullScreen(el);
+};
+
 /**
  * 确定当前选项卡是否可见
  * @returns true/false
