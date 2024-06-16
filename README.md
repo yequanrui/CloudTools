@@ -21,7 +21,7 @@
 [![node](https://img.shields.io/node/v/@angular/core)](http://nodejs.cn/)
 [![npm](https://img.shields.io/npm/v/npm/latest-6?label=npm)](https://www.npmjs.com/)
 
-[![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](http://angular.cn/)
+[![angular](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/@angular/core?label=angular)](https://angular.dev/)
 [![devui](https://img.shields.io/github/package-json/dependency-version/yequanrui/CloudTools/ng-devui)](https://devui.design/home)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.x.x.
