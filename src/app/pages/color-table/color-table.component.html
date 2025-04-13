@@ -1,0 +1,39 @@
+<div class="color-table-container devui-scrollbar" #scrollTarget>
+  <div class="scroll-target" dAnchorBox [scrollTarget]="scrollTarget" [view]="{ top: 10 }" [defaultAnchor]="colorTable.hue.table[0].id">
+    <d-row [dClass]="['color-table-row']" [dFlex]="1" [dFlexContainer]="'row'" [dJustify]="'between'">
+      <d-col [dSpan]="4" [dStyle]="{ width: '240px' }">
+        <d-sticky [scrollTarget]="scrollTarget">
+          <div class="color-table-menu" dMenu>
+            <div dSubMenu title="{{ colorTable.hue.title }}" icon="icon-more-func" [open]="true">
+              @for (ht of colorTable.hue.table; track ht.id) {
+              <div dMenuItem [dAnchorLink]="ht.id" anchorActive="active">
+                <span class="devui-menu-item-name">{{ ht.name }}</span>
+              </div>
+              }
+            </div>
+            <div dSubMenu title="{{ colorTable.character.title }}" icon="icon-more-func" [open]="true">
+              @for (ct of colorTable.character.table; track ct.id) {
+              <div dMenuItem [dAnchorLink]="ct.id" anchorActive="active">
+                <span class="devui-menu-item-name">{{ ct.name }}</span>
+              </div>
+              }
+            </div>
+          </div>
+        </d-sticky>
+      </d-col>
+      <d-col [dFlex]="1" [dFlexContainer]="'column'" [dJustify]="'start'" [dAlign]="'stretch'">
+        @for (ht of colorTable.hue.table; track ht.id) {
+        <d-panel [dAnchor]="ht.id">
+          <d-panel-header>{{ ht.name }}</d-panel-header>
+          <d-panel-body>{{ ht.colors }}</d-panel-body>
+        </d-panel>
+        } @for (ct of colorTable.character.table; track ct.id) {
+        <d-panel [dAnchor]="ct.id">
+          <d-panel-header>{{ ct.name }}</d-panel-header>
+          <d-panel-body>{{ ct.colors }}</d-panel-body>
+        </d-panel>
+        }
+      </d-col>
+    </d-row>
+  </div>
+</div>

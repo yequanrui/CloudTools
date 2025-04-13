@@ -1,5 +1,7 @@
 d-accordion {
   height: 100%;
+  position: relative;
+  z-index: 10;
   .menu-item {
     display: flex;
     align-items: center;

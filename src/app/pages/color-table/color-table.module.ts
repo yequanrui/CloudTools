@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
-import { AlertModule, CheckBoxModule, LayoutModule, PopoverModule, TabsModule } from 'ng-devui';
+import { AnchorModule, BackTopModule, LayoutModule, PanelModule, PopoverModule, StickyModule } from 'ng-devui';
+import { MenuModule } from 'ng-devui/menu';
 import { ColorTableComponent } from './color-table.component';
 
 @NgModule({
   imports: [
-    AlertModule,
-    CheckBoxModule,
+    AnchorModule,
+    BackTopModule,
     LayoutModule,
+    MenuModule,
+    PanelModule,
     PopoverModule,
-    TabsModule,
+    StickyModule,
     SharedModule,
     RouterModule.forChild([{ path: '', component: ColorTableComponent }]),
   ],
