@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { AlertModule, ButtonModule, CheckBoxModule, LayoutModule, PopoverModule, RadioModule, TabsModule, TextareaModule } from 'ng-devui';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
-import { TranscodingRoutingModule } from './transcoding-routing.module';
+import { AlertModule, ButtonModule, CheckBoxModule, LayoutModule, PopoverModule, RadioModule, TabsModule, TextareaModule } from 'ng-devui';
 import { TranscodingComponent } from './transcoding.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { TranscodingComponent } from './transcoding.component';
     TabsModule,
     TextareaModule,
     SharedModule,
-    TranscodingRoutingModule,
+    RouterModule.forChild([{ path: '', component: TranscodingComponent }]),
   ],
   declarations: [TranscodingComponent],
 })

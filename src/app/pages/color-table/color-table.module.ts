@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
 import { AlertModule, CheckBoxModule, LayoutModule, PopoverModule, TabsModule } from 'ng-devui';
-import { JsEqualityComponent } from './js-equality.component';
+import { ColorTableComponent } from './color-table.component';
 
 @NgModule({
   imports: [
@@ -12,8 +12,8 @@ import { JsEqualityComponent } from './js-equality.component';
     PopoverModule,
     TabsModule,
     SharedModule,
-    RouterModule.forChild([{ path: '', component: JsEqualityComponent }]),
+    RouterModule.forChild([{ path: '', component: ColorTableComponent }]),
   ],
-  declarations: [JsEqualityComponent],
+  declarations: [ColorTableComponent],
 })
-export class JsEqualityModule {}
+export class ColorTableModule {}

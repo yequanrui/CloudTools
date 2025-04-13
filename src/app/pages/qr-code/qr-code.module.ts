@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
-import { ButtonModule, CardModule, InputNumberModule, TextareaModule } from 'ng-devui';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
-import { QrCodeRoutingModule } from './qr-code-routing.module';
+import { ButtonModule, CardModule, InputNumberModule, TextareaModule } from 'ng-devui';
 import { QrCodeComponent } from './qr-code.component';
 
 @NgModule({
-  imports: [ButtonModule, CardModule, InputNumberModule, TextareaModule, SharedModule, QrCodeRoutingModule],
+  imports: [
+    ButtonModule,
+    CardModule,
+    InputNumberModule,
+    TextareaModule,
+    SharedModule,
+    RouterModule.forChild([{ path: '', component: QrCodeComponent }]),
+  ],
   declarations: [QrCodeComponent],
 })
 export class QrCodeModule {}

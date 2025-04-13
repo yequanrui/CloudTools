@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '@shared';
+import { RouterModule } from '@angular/router';
 import { PipesModule } from '@pipes/pipes.module';
-import { Match3RoutingModule } from './match-3-routing.module';
+import { SharedModule } from '@shared';
 import { Match3Component } from './match-3.component';
 
 @NgModule({
-  imports: [SharedModule, PipesModule, Match3RoutingModule],
+  imports: [SharedModule, PipesModule, RouterModule.forChild([{ path: '', component: Match3Component }])],
   declarations: [Match3Component],
 })
 export class Match3Module {}

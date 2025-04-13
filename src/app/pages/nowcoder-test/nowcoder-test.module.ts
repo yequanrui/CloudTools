@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '@shared';
 import {
   AlertModule,
   ButtonModule,
@@ -9,8 +11,6 @@ import {
   TextareaModule,
   TextInputModule,
 } from 'ng-devui';
-import { SharedModule } from '@shared';
-import { NowcoderTestRoutingModule } from './nowcoder-test-routing.module';
 import { NowcoderTestComponent } from './nowcoder-test.component';
 
 @NgModule({
@@ -24,7 +24,7 @@ import { NowcoderTestComponent } from './nowcoder-test.component';
     TextareaModule,
     TextInputModule,
     SharedModule,
-    NowcoderTestRoutingModule,
+    RouterModule.forChild([{ path: '', component: NowcoderTestComponent }]),
   ],
   declarations: [NowcoderTestComponent],
 })

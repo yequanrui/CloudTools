@@ -1,20 +1,20 @@
 @import '../../devui';
 
 .calc {
-  background: $devui-feedback-overlay-bg;
+  background-color: $devui-glass-morphism-bg;
   width: 550px;
   height: 500px;
   margin: 50px auto;
-  border-radius: $devui-border-radius-feedback;
-  box-shadow: $devui-shadow-length-feedback-overlay $devui-feedback-overlay-shadow;
+  border-radius: $devui-border-radius-card;
+  box-shadow: $devui-shadow-length-base $devui-shadow;
   .title {
     font-size: $devui-font-size-modal-title;
     line-height: 55px;
     text-indent: 30px;
-    color: $devui-feedback-overlay-text;
+    color: $devui-text;
   }
   .result {
-    background: $devui-primary-bg;
+    background-color: $devui-primary-bg;
     width: 490px;
     margin: 0 auto;
     padding: 0 8px;
@@ -29,14 +29,13 @@
     height: 300px;
     margin: 30px auto 0;
     ul li {
-      background: $devui-primary;
+      background-color: $devui-form-control-bg;
       width: 80px;
       height: 60px;
       margin: 10px;
       border-radius: $devui-border-radius-card;
       box-shadow: $devui-shadow-length-base $devui-shadow;
       color: $devui-text;
-      font-family: fangsong;
       font-size: $devui-font-size-data-overview;
       font-weight: bold;
       display: flex;
@@ -45,24 +44,29 @@
       float: left;
       cursor: pointer;
       &:hover {
-        background: $devui-primary-hover;
+        background-color: $devui-list-item-hover-bg;
       }
       &:active {
-        background: $devui-primary-active;
+        background-color: $devui-list-item-active-bg;
       }
       &.tool {
-        background: $devui-contrast;
+        background-color: $devui-contrast;
+        color: $devui-light-text;
         &:hover {
-          background: $devui-contrast-hover;
+          background-color: $devui-contrast-hover;
         }
         &:active {
-          background: $devui-contrast-active;
+          background-color: $devui-contrast-active;
         }
       }
       &.tool2 {
-        background: $devui-success;
+        background-color: $devui-primary;
+        color: $devui-light-text;
+        &:hover {
+          background-color: $devui-primary-hover;
+        }
         &:active {
-          background: $devui-success;
+          background-color: $devui-primary-active;
         }
       }
     }

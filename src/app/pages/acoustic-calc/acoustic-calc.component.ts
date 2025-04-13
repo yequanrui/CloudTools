@@ -36,7 +36,7 @@ export class AcousticCalcComponent implements OnInit {
   tools(op: string, m: string) {
     if (this.operate) {
       let num = this.result;
-      num = num == '0' ? '0' : num;
+      num = num === '0' ? '0' : num;
       this.result = num + op; // 拼接操作符
       this.operate = false;
       this.xop = true;

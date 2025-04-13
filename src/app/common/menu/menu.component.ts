@@ -29,6 +29,13 @@ export class MenuComponent implements OnInit {
           ],
         },
         {
+          title: this.translate.instant('menu.design'),
+          children: [
+            { title: this.translate.instant('menu.colorPad'), link: '/color-pad', linkType: 'routerLink' },
+            { title: this.translate.instant('menu.colorTable'), link: '/color-table', linkType: 'routerLink' },
+          ],
+        },
+        {
           title: this.translate.instant('menu.graphics'),
           children: [{ title: this.translate.instant('menu.photoParams'), link: '/photo-params', linkType: 'routerLink' }],
         },

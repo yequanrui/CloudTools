@@ -1,6 +1,6 @@
 <div class="calc">
-  <p class="title">{{'menu.acousticCalc'|translate}}</p>
-  <div id="result" class="result">{{result}}</div>
+  <p class="title">{{ 'menu.acousticCalc' | translate }}</p>
+  <div id="result" class="result">{{ result }}</div>
   <div class="operator">
     <ul>
       <li (click)="command('7')">7</li>
@@ -11,18 +11,18 @@
       <li (click)="command('4')">4</li>
       <li (click)="command('5')">5</li>
       <li (click)="command('6')">6</li>
-      <li class="tool" (click)="tools('*','g')">*</li>
-      <li class="tool" (click)="tools('/','g');">÷</li>
+      <li class="tool" (click)="tools('*', 'g')">×</li>
+      <li class="tool" (click)="tools('/', 'g')">÷</li>
       <li (click)="command('3')">3</li>
       <li (click)="command('2')">2</li>
       <li (click)="command('1')">1</li>
-      <li class="tool" (click)="tools('+','g');">+</li>
-      <li class="tool" (click)="tools('-','g');">-</li>
+      <li class="tool" (click)="tools('+', 'g')">＋</li>
+      <li class="tool" (click)="tools('-', 'g')">－</li>
       <li (click)="command('0')">0</li>
-      <li (click)="command('0')">00</li>
+      <li (click)="command('00')">00</li>
       <li (click)="dot('g')">.</li>
-      <li class="tool" (click)="tools('*','g')">%</li>
-      <li class="tool2" (click)="equal('j')">=</li>
+      <li class="tool" (click)="tools('%', 'g')"> % </li>
+      <li class="tool2" (click)="equal('j')"> = </li>
     </ul>
   </div>
 </div>

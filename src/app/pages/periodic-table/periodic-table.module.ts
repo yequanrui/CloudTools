@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CardModule, PopoverModule } from 'ng-devui';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
-import { PeriodicTableRoutingModule } from './periodic-table-routing.module';
+import { CardModule, PopoverModule } from 'ng-devui';
 import { PeriodicTableComponent } from './periodic-table.component';
 
 @NgModule({
-  imports: [CardModule, PopoverModule, SharedModule, PeriodicTableRoutingModule],
+  imports: [CardModule, PopoverModule, SharedModule, RouterModule.forChild([{ path: '', component: PeriodicTableComponent }])],
   declarations: [PeriodicTableComponent],
 })
 export class PeriodicTableModule {}

@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
-import { ButtonModule, DatepickerProModule, LayoutModule, PopoverModule, TagsModule } from 'ng-devui';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared';
-import { CalendarRoutingModule } from './calendar-routing.module';
+import { ButtonModule, DatepickerProModule, LayoutModule, PopoverModule, TagsModule } from 'ng-devui';
 import { CalendarComponent } from './calendar.component';
 
 @NgModule({
-  imports: [ButtonModule, DatepickerProModule, LayoutModule, PopoverModule, TagsModule, SharedModule, CalendarRoutingModule],
+  imports: [
+    ButtonModule,
+    DatepickerProModule,
+    LayoutModule,
+    PopoverModule,
+    TagsModule,
+    SharedModule,
+    RouterModule.forChild([{ path: '', component: CalendarComponent }]),
+  ],
   declarations: [CalendarComponent],
 })
 export class CalendarModule {}

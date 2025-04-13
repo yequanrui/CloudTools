@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { periodicList } from './periodic-table';
+import { periodicList } from './periodic-table.data';
 
 @Component({
   selector: 'periodic-table',

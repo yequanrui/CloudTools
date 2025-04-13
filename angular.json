@@ -26,16 +26,10 @@
             "outputPath": "dist/CloudTools",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "node_modules/zone.js"
-            ],
+            "polyfills": ["node_modules/zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/assets/i18n"
-            ],
+            "assets": ["src/favicon.ico", "src/assets", "src/assets/i18n"],
             "styles": [
               "src/styles.scss",
               "node_modules/ng-devui/devui.min.css",
@@ -82,10 +76,10 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CloudTools:build:production"
+              "buildTarget": "CloudTools:build:production"
             },
             "development": {
-              "browserTarget": "CloudTools:build:development"
+              "buildTarget": "CloudTools:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CloudTools:build"
+            "buildTarget": "CloudTools:build"
           }
         },
         "test": {
@@ -102,20 +96,12 @@
             "customWebpackConfig": {
               "path": "scripts/extra-webpack.config.js"
             },
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
