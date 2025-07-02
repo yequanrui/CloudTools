@@ -1,6 +1,6 @@
 {
   "name": "cloud-tools",
-  "version": "1.8.0",
+  "version": "1.8.2",
   "description": "Toolsets based on DevUI(Angular)",
   "keywords": [
     "angular",
@@ -36,14 +36,14 @@
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^18.0.0",
-    "@angular-devkit/build-angular": "^18.2.19",
-    "@angular-devkit/core": "~18.2.19",
-    "@angular/cli": "^18.2.19",
+    "@angular-devkit/build-angular": "^18.2.20",
+    "@angular-devkit/core": "~18.2.20",
+    "@angular/cli": "^18.2.20",
     "@angular/compiler-cli": "^18.2.13",
     "@angular/language-service": "^18.2.13",
     "@types/jasmine": "~5.1.7",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "~20.17.57",
+    "@types/node": "~20.17.58",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
